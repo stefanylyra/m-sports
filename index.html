@@ -38,29 +38,7 @@
     font-family:'Manrope',sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
-    position: relative;
   }
-
-  /* ==================== MARCA D'ÁGUA ==================== */
-  .watermark {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-12deg);
-    font-family: 'Fraunces', serif;
-    font-size: clamp(1.8rem, 6vw, 4.5rem); /* menor */
-    font-weight: 700;
-    color: rgba(14, 52, 70, 0.18); /* menos transparente */
-    pointer-events: none;
-    z-index: 10;
-    white-space: nowrap;
-    user-select: none;
-    text-align: center;
-    line-height: 1.1;
-    text-shadow: 0 0 25px rgba(255,255,255,0.8);
-  }
-  /* ==================== FIM MARCA D'ÁGUA ==================== */
-
   h1,h2,h3,.display{
     font-family:'Fraunces',serif;
     font-weight:600;
@@ -82,20 +60,49 @@
   button{font-family:inherit;cursor:pointer;}
   :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
 
-  .topbar{background:var(--navy-deep);color:rgba(255,255,255,0.82);font-size:0.82rem;}
-  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 24px;gap:12px;flex-wrap:wrap;}
+  /* ---- topbar ---- */
+  .topbar{
+    background:var(--navy-deep);
+    color:rgba(255,255,255,0.82);
+    font-size:0.82rem;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:8px 24px;gap:12px;flex-wrap:wrap;
+  }
   .topbar a{text-decoration:none;color:#fff;}
   .topbar .tb-links{display:flex;gap:20px;flex-wrap:wrap;}
   .topbar .tb-links span{opacity:0.6;margin-right:6px;}
 
-  header.main{position:sticky;top:0;z-index:50;background:rgba(252,250,245,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-  header.main .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
-  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:700;font-size:1.32rem;color:var(--navy-deep);text-decoration:none;}
+  /* ---- header ---- */
+  header.main{
+    position:sticky;top:0;z-index:50;
+    background:rgba(252,250,245,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  header.main .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces',serif;font-weight:700;font-size:1.32rem;
+    color:var(--navy-deep);text-decoration:none;
+  }
   .logo .mark{width:34px;height:34px;flex-shrink:0;}
   nav.primary{display:flex;gap:30px;align-items:center;}
-  nav.primary a{text-decoration:none;color:var(--ink-soft);font-weight:600;font-size:0.94rem;transition:color .15s ease;}
+  nav.primary a{
+    text-decoration:none;color:var(--ink-soft);font-weight:600;font-size:0.94rem;
+    transition:color .15s ease;
+  }
   nav.primary a:hover{color:var(--teal);}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:100px;font-weight:700;font-size:0.92rem;border:none;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;white-space:nowrap;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 24px;border-radius:100px;font-weight:700;font-size:0.92rem;
+    border:none;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
   .btn-primary{background:var(--gold);color:var(--navy-deep);box-shadow:0 10px 24px -10px rgba(214,163,74,0.65);}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(214,163,74,0.75);}
   .btn-ghost{background:transparent;color:var(--navy-deep);border:1.5px solid var(--line);}
@@ -103,51 +110,94 @@
   .btn-light{background:#fff;color:var(--navy-deep);}
   .btn-light:hover{transform:translateY(-2px);}
   .header-cta{display:flex;gap:12px;align-items:center;}
+  .nav-toggle{display:none;background:none;border:none;padding:8px;}
 
-  .hero{position:relative;overflow:hidden;background:radial-gradient(120% 140% at 15% -10%, #164A5F 0%, var(--navy) 45%, var(--navy-deep) 100%);color:#fff;}
-  .hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;padding:76px 24px 0;}
+  /* ---- hero ---- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:radial-gradient(120% 140% at 15% -10%, #164A5F 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:#fff;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;
+    padding:76px 24px 0;
+  }
   .hero h1{color:#fff;font-size:clamp(2.1rem,3.6vw,3.2rem);line-height:1.08;}
   .hero h1 em{font-style:italic;color:var(--gold);}
-  .hero p.lead{font-size:1.1rem;color:rgba(255,255,255,0.82);max-width:46ch;margin:20px 0 30px;}
+  .hero p.lead{
+    font-size:1.1rem;color:rgba(255,255,255,0.82);max-width:46ch;margin:20px 0 30px;
+  }
   .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px;}
   .hero .microcopy{font-size:0.85rem;color:rgba(255,255,255,0.55);}
   .hero-visual{position:relative;height:420px;}
-  .lane-badge{position:absolute;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);backdrop-filter:blur(6px);border-radius:16px;padding:16px 18px;color:#fff;box-shadow:0 20px 40px -20px rgba(0,0,0,0.5);}
+  .lane-badge{
+    position:absolute;background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.16);
+    backdrop-filter:blur(6px);
+    border-radius:16px;padding:16px 18px;color:#fff;
+    box-shadow:0 20px 40px -20px rgba(0,0,0,0.5);
+  }
   .lane-badge .num{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:700;color:var(--gold);line-height:1;}
   .lane-badge .lbl{font-size:0.76rem;color:rgba(255,255,255,0.7);margin-top:4px;}
-  .pool-graphic{position:absolute;inset:0;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#1C6472 0%, #123C4A 100%);}
+  .pool-graphic{position:absolute;inset:0;border-radius:24px;overflow:hidden;
+    background:linear-gradient(180deg,#1C6472 0%, #123C4A 100%);}
   .pool-graphic svg{position:absolute;inset:0;width:100%;height:100%;}
   .wave-divider{display:block;width:100%;line-height:0;}
 
+  /* ---- stat strip ---- */
   .stat-strip{background:var(--navy-deep);color:#fff;}
-  .stat-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 24px;text-align:center;}
-  .stat-strip .stat b{display:block;font-family:'Fraunces',serif;font-size:2.1rem;color:var(--gold);font-weight:700;}
+  .stat-strip .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+    padding:34px 24px;text-align:center;
+  }
+  .stat-strip .stat b{
+    display:block;font-family:'Fraunces',serif;font-size:2.1rem;color:var(--gold);font-weight:700;
+  }
   .stat-strip .stat span{font-size:0.82rem;color:rgba(255,255,255,0.68);}
 
+  /* ---- section shared ---- */
   section{padding:88px 0;}
   .section-head{max-width:640px;margin-bottom:52px;}
   .section-head h2{font-size:clamp(1.7rem,2.6vw,2.4rem);margin-top:10px;}
   .section-head p{color:var(--ink-soft);margin-top:14px;font-size:1.02rem;}
+
+  /* ---- features ---- */
   .features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .feature-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:transform .18s ease, box-shadow .18s ease;}
+  .feature-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;transition:transform .18s ease, box-shadow .18s ease;
+  }
   .feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
   .feature-card .ic{width:42px;height:42px;margin-bottom:16px;}
   .feature-card h3{font-size:1.08rem;margin-bottom:8px;}
   .feature-card p{color:var(--ink-soft);font-size:0.92rem;margin:0;}
 
+  /* ---- timeline (signature) ---- */
   .timeline-section{background:var(--sand);}
   .timeline{position:relative;padding-top:20px;}
   .timeline-line{width:100%;height:64px;}
-  .timeline-stops{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:-8px;}
+  .timeline-stops{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:-8px;
+  }
   .stop{text-align:center;padding:0 6px;}
-  .stop .dot{width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--sand);margin:0 auto 14px;box-shadow:0 0 0 2px var(--gold);}
+  .stop .dot{
+    width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--sand);
+    margin:0 auto 14px;box-shadow:0 0 0 2px var(--gold);
+  }
   .stop .age{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--teal);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px;}
   .stop h4{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--navy-deep);margin:0 0 6px;}
   .stop p{font-size:0.86rem;color:var(--ink-soft);margin:0;}
 
+  /* ---- modalidades ---- */
   .modalidades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-  .mod-card{position:relative;border-radius:var(--radius);padding:26px;min-height:150px;background:var(--navy);color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;}
-  .mod-card::before{content:"";position:absolute;inset:0;opacity:0.5;background:radial-gradient(120% 100% at 100% 0%, rgba(44,151,160,0.55), transparent 60%);}
+  .mod-card{
+    position:relative;border-radius:var(--radius);padding:26px;min-height:150px;
+    background:var(--navy);color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .mod-card::before{
+    content:"";position:absolute;inset:0;opacity:0.5;
+    background:radial-gradient(120% 100% at 100% 0%, rgba(44,151,160,0.55), transparent 60%);
+  }
   .mod-card h3{position:relative;color:#fff;font-size:1.14rem;margin-bottom:6px;}
   .mod-card p{position:relative;color:rgba(255,255,255,0.72);font-size:0.86rem;margin:0;}
   .mod-card.alt{background:var(--teal);}
@@ -155,24 +205,34 @@
   .mod-card.gold{background:var(--gold-deep);}
   .mod-card.gold::before{background:radial-gradient(120% 100% at 100% 0%, rgba(255,255,255,0.25), transparent 60%);}
 
+  /* ---- estrutura / testimonials ---- */
   .estrutura{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-  .estrutura-visual{border-radius:24px;height:400px;position:relative;overflow:hidden;background:linear-gradient(160deg,#DCEEF0 0%, #B9DDE0 100%);}
+  .estrutura-visual{
+    border-radius:24px;height:400px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,#DCEEF0 0%, #B9DDE0 100%);
+  }
   .estrutura-visual svg{position:absolute;inset:0;width:100%;height:100%;}
   .estrutura-list{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:16px;}
   .estrutura-list li{display:flex;gap:14px;align-items:flex-start;}
-  .estrutura-list .chk{width:24px;height:24px;border-radius:50%;background:var(--teal);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .estrutura-list .chk{
+    width:24px;height:24px;border-radius:50%;background:var(--teal);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
   .estrutura-list .chk svg{width:13px;height:13px;}
   .estrutura-list p{margin:0;color:var(--ink-soft);font-size:0.96rem;}
   .estrutura-list strong{color:var(--navy-deep);}
 
   .testimonials{margin-top:70px;}
   .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
+  .t-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  }
   .t-stars{color:var(--gold);font-size:0.95rem;letter-spacing:2px;margin-bottom:14px;}
   .t-card p{font-size:0.94rem;color:var(--ink);margin:0 0 16px;}
   .t-who{font-size:0.82rem;color:var(--ink-soft);font-weight:700;}
   .t-note{font-size:0.76rem;color:var(--ink-soft);opacity:0.7;margin-top:20px;}
 
+  /* ---- location / form ---- */
   .location{background:var(--navy-deep);color:#fff;}
   .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
   .loc-info h2{color:#fff;}
@@ -181,21 +241,33 @@
   .loc-facts .ic{width:22px;height:22px;flex-shrink:0;color:var(--gold);margin-top:2px;}
   .loc-facts b{display:block;font-size:0.95rem;}
   .loc-facts span{font-size:0.86rem;color:rgba(255,255,255,0.65);}
-  .map-frame{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.15);height:220px;margin-top:8px;}
+  .map-frame{
+    border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.15);
+    height:220px;margin-top:8px;
+  }
   .map-frame iframe{width:100%;height:100%;border:0;filter:saturate(0.85);}
 
-  .form-card{background:#fff;color:var(--ink);border-radius:22px;padding:32px;box-shadow:var(--shadow);}
+  .form-card{
+    background:#fff;color:var(--ink);border-radius:22px;padding:32px;box-shadow:var(--shadow);
+  }
   .form-card h3{font-size:1.25rem;margin-bottom:6px;}
   .form-card .sub{color:var(--ink-soft);font-size:0.9rem;margin-bottom:22px;}
   .field{margin-bottom:16px;}
   .field label{display:block;font-size:0.82rem;font-weight:700;margin-bottom:6px;color:var(--navy-deep);}
-  .field input,.field select{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);font-family:inherit;font-size:0.95rem;background:var(--paper);color:var(--ink);}
+  .field input,.field select{
+    width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);
+    font-family:inherit;font-size:0.95rem;background:var(--paper);color:var(--ink);
+  }
   .field input:focus,.field select:focus{border-color:var(--teal);outline:none;}
   .form-card .btn{width:100%;padding:15px;font-size:1rem;}
   .form-msg{font-size:0.84rem;margin-top:14px;display:none;color:var(--teal);font-weight:700;}
   .form-msg.show{display:block;}
 
-  .final-cta{background:linear-gradient(135deg,var(--gold) 0%, var(--gold-deep) 100%);text-align:center;}
+  /* ---- final cta ---- */
+  .final-cta{
+    background:linear-gradient(135deg,var(--gold) 0%, var(--gold-deep) 100%);
+    text-align:center;
+  }
   .final-cta h2{color:var(--navy-deep);font-size:clamp(1.7rem,3vw,2.5rem);}
   .final-cta p{color:rgba(14,52,70,0.75);margin:14px auto 30px;max-width:52ch;font-size:1.05rem;}
   .final-cta .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
@@ -204,6 +276,7 @@
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center;}
   footer a{text-decoration:none;color:rgba(255,255,255,0.75);}
 
+  /* ---- mobile ---- */
   @media (max-width:920px){
     nav.primary{display:none;}
     .header-cta .btn-ghost{display:none;}
@@ -226,15 +299,38 @@
     .stat-strip .wrap{grid-template-columns:repeat(2,1fr);padding:28px 20px;}
     .topbar .tb-links{display:none;}
   }
+  /* ---- marca d'água de apresentação ---- */
+.marca-agua-cliente{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    z-index: 9999;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(18px, 2.5vw, 32px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: rgba(14,52,70,0.12);
+    border: 3px solid rgba(14,52,70,0.12);
+    padding: 20px 35px;
+    border-radius: 20px;
+
+    pointer-events: none;
+    user-select: none;
+
+    white-space: nowrap;
+}
 </style>
 </head>
 <body>
-
-  <!-- MARCA D'ÁGUA -->
-  <div class="watermark">
-    Desenvolvimento exclusivo<br>para apresentação ao cliente
-  </div>
-
+<div class="marca-agua-cliente">
+    Desenvolvimento exclusivo<br>
+    para apresentação ao cliente
+</div>
 <div class="topbar">
   <div class="wrap">
     <div>Av. Anita Garibaldi, 1025 — Ahú, Curitiba/PR</div>
@@ -312,6 +408,7 @@
       </div>
     </div>
   </div>
+
   <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" style="margin-top:70px;">
     <path d="M0,60 C 240,20 480,90 720,55 S 1200,20 1440,55 L1440,90 L0,90 Z" fill="#0A2531"/>
   </svg>
@@ -331,23 +428,218 @@
     <div class="section-head">
       <span class="eyebrow">Por que a M Sports</span>
       <h2>Uma academia pensada para durar — assim como o seu hábito de treinar.</h2>
-      <p>Enquanto muitas academias competem por modismo, a M Sports foi construída para acompanhar sua família ao longo dos anos.</p>
+      <p>Enquanto muitas academias competem por modismo, a M Sports foi construída para acompanhar sua família ao longo dos anos: da natação para bebês à musculação para adultos e à melhor idade, tudo no mesmo endereço.</p>
     </div>
     <div class="features">
-      <div class="feature-card"> <!-- cards mantidos simplificados por brevidade, mas você pode restaurar o conteúdo completo --> 
-        <h3>4 piscinas</h3><p>Natação para todas as idades.</p>
+      <div class="feature-card">
+        <svg class="ic" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#2C97A0" stroke-width="2"/><path d="M12 22c2.5-3 5-3 7.5 0s5 3 7.5 0" stroke="#D6A34A" stroke-width="2.2" stroke-linecap="round"/><path d="M12 16c2.5-3 5-3 7.5 0s5 3 7.5 0" stroke="#0E3446" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>4 piscinas sob o mesmo teto</h3>
+        <p>Natação adulto, infantil, para bebês a partir de 3 meses e piscina exclusiva para hidroginástica.</p>
       </div>
-      <!-- Repita os outros cards conforme necessário -->
+      <div class="feature-card">
+        <svg class="ic" viewBox="0 0 42 42" fill="none"><rect x="4" y="18" width="34" height="6" rx="2" stroke="#2C97A0" stroke-width="2"/><rect x="8" y="12" width="4" height="18" rx="1.5" fill="#D6A34A"/><rect x="30" y="12" width="4" height="18" rx="1.5" fill="#D6A34A"/></svg>
+        <h3>Musculação completa</h3>
+        <p>Equipamentos modernos para hipertrofia, força e condicionamento, com orientação de instrutores.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="ic" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="20" stroke="#0E3446" stroke-width="2"/><circle cx="21" cy="21" r="7" stroke="#2C97A0" stroke-width="2"/></svg>
+        <h3>Estúdio de pilates</h3>
+        <p>Aulas de pilates de aparelho para postura, mobilidade e recuperação, em turmas reduzidas.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="ic" viewBox="0 0 42 42" fill="none"><path d="M6 30 L16 14 L24 24 L30 12 L36 30" stroke="#D6A34A" stroke-width="2.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <h3>Dois estacionamentos</h3>
+        <p>Chegue de carro sem preocupação: vagas próprias para alunos em horários de pico.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Continue adicionando as demais seções conforme seu código original (timeline, modalidades, estrutura, depoimentos, localização, etc.) -->
+<section class="timeline-section" id="geracoes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Para toda a família</span>
+      <h2>Da primeira braçada à melhor idade, sem trocar de academia.</h2>
+      <p>A M Sports acompanha cada fase da vida com modalidades específicas — é por isso que famílias inteiras treinam aqui há gerações.</p>
+    </div>
+    <div class="timeline">
+      <svg class="timeline-line" viewBox="0 0 1000 60" preserveAspectRatio="none">
+        <path d="M0,30 C 100,10 150,50 250,30 S 400,10 500,30 S 650,50 750,30 S 900,10 1000,30" stroke="#D6A34A" stroke-width="2.5" fill="none" stroke-dasharray="1 10" stroke-linecap="round"/>
+      </svg>
+      <div class="timeline-stops">
+        <div class="stop">
+          <div class="dot"></div>
+          <div class="age">3 meses+</div>
+          <h4>Natação para bebês</h4>
+          <p>Primeiro contato com a água, junto dos pais.</p>
+        </div>
+        <div class="stop">
+          <div class="dot"></div>
+          <div class="age">Infância</div>
+          <h4>Natação infantil</h4>
+          <p>Aprendizado técnico com segurança e diversão.</p>
+        </div>
+        <div class="stop">
+          <div class="dot"></div>
+          <div class="age">Jovens e adultos</div>
+          <h4>Musculação, spinning, HIIT e zumba</h4>
+          <p>Treinos de alta energia para o dia a dia corrido.</p>
+        </div>
+        <div class="stop">
+          <div class="dot"></div>
+          <div class="age">Todas as idades</div>
+          <h4>Pilates de estúdio</h4>
+          <p>Fortalecimento, postura e consciência corporal.</p>
+        </div>
+        <div class="stop">
+          <div class="dot"></div>
+          <div class="age">Melhor idade</div>
+          <h4>Hidroginástica</h4>
+          <p>Baixo impacto, alto ganho de mobilidade e disposição.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modalidades">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Modalidades</span>
+      <h2>Uma modalidade para cada objetivo — e para cada humor da semana.</h2>
+    </div>
+    <div class="modalidades-grid">
+      <div class="mod-card"><h3>Natação (adulto, infantil e bebês)</h3><p>Técnica, condicionamento e adaptação ao meio líquido.</p></div>
+      <div class="mod-card alt"><h3>Hidroginástica</h3><p>Treino de baixo impacto para todas as idades.</p></div>
+      <div class="mod-card gold"><h3>Musculação</h3><p>Hipertrofia, força e treino resistido com acompanhamento.</p></div>
+      <div class="mod-card alt"><h3>Pilates de estúdio</h3><p>Aulas em aparelho, com foco em postura e core.</p></div>
+      <div class="mod-card"><h3>Spinning</h3><p>Aulas de bike indoor de alta intensidade.</p></div>
+      <div class="mod-card gold"><h3>Zumba &amp; HIIT</h3><p>Aulas coletivas para queimar energia com música e ritmo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="estrutura" style="background:var(--sand);">
+  <div class="wrap">
+    <div class="estrutura">
+      <div class="estrutura-visual">
+        <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#0E3446" stroke-opacity="0.18" stroke-width="2" fill="none">
+            <path d="M-20 60 C 60 30, 100 90, 180 60 S 320 30, 400 60 S 520 90, 560 60"/>
+            <path d="M-20 130 C 60 100, 100 160, 180 130 S 320 100, 400 130 S 520 160, 560 130"/>
+            <path d="M-20 200 C 60 170, 100 230, 180 200 S 320 170, 400 200 S 520 230, 560 200"/>
+            <path d="M-20 270 C 60 240, 100 300, 180 270 S 320 240, 400 270 S 520 300, 560 270"/>
+            <path d="M-20 340 C 60 310, 100 370, 180 340 S 320 310, 400 340 S 520 370, 560 340"/>
+          </g>
+          <circle cx="250" cy="200" r="90" fill="#2C97A0" opacity="0.18"/>
+          <circle cx="250" cy="200" r="50" fill="#D6A34A" opacity="0.35"/>
+        </svg>
+      </div>
+      <div class="estrutura-copy">
+        <span class="eyebrow">Estrutura</span>
+        <h2>1.200 m² construídos para treinar sem pressa e sem fila.</h2>
+        <ul class="estrutura-list">
+          <li><span class="chk"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p><strong>4 piscinas</strong>, sendo uma exclusiva para hidroginástica.</p></li>
+          <li><span class="chk"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p><strong>Vestiário infantil</strong> para famílias com crianças pequenas.</p></li>
+          <li><span class="chk"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p><strong>Salas dedicadas</strong> para pilates, spinning, zumba e HIIT.</p></li>
+          <li><span class="chk"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <p><strong>Dois estacionamentos</strong> próprios, sem depender da rua.</p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="testimonials">
+      <div class="section-head" style="margin-bottom:30px;">
+        <span class="eyebrow">Quem treina, recomenda</span>
+        <h2 style="font-size:1.5rem;">A opinião de quem já faz parte da família M Sports</h2>
+      </div>
+      <div class="t-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>“Levei meu filho para conhecer a natação infantil e acabei me matriculando na musculação também. Estrutura muito bem cuidada.”</p>
+          <div class="t-who">Aluna da unidade Ahú</div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>“Ambiente acolhedor e professores atenciosos em todas as modalidades que já experimentei — do pilates à hidroginástica.”</p>
+          <div class="t-who">Aluno da unidade Ahú</div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p>“Minha mãe faz hidroginástica e eu treino musculação no mesmo horário — resolve a rotina de duas gerações em um só lugar.”</p>
+          <div class="t-who">Aluna da unidade Ahú</div>
+        </div>
+      </div>
+      <p class="t-note">Depoimentos ilustrativos com base no perfil de público da academia — substitua pelos relatos reais dos seus alunos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="location" id="localizacao">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="loc-info">
+        <span class="eyebrow" style="color:var(--gold);">Localização e horários</span>
+        <h2>Fácil de chegar, fácil de virar hábito.</h2>
+        <ul class="loc-facts">
+          <li>
+            <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.5 7-13a7 7 0 10-14 0c0 5.5 7 13 7 13z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            <div><b>Av. Anita Garibaldi, 1025 — Ahú</b><span>Curitiba/PR, 80540-180</span></div>
+          </li>
+          <li>
+            <svg class="ic" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <div><b>Segunda a sexta, 06h às 21h</b><span>Sábado, 08h às 12h</span></div>
+          </li>
+          <li>
+            <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-4 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <div><b>(41) 3044-5954</b><span>Ligue ou chame no WhatsApp</span></div>
+          </li>
+        </ul>
+        <a href="https://maps.app.goo.gl/XVNRNS532USNgDeS7" target="_blank" rel="noopener" class="btn btn-light">Ver rota no Google Maps</a>
+        <div class="map-frame">
+          <iframe src="https://maps.google.com/maps?q=Av.+Anita+Garibaldi,+1025,+Curitiba,+PR&z=15&output=embed" loading="lazy" title="Mapa M Sports"></iframe>
+        </div>
+      </div>
+
+      <div class="form-card" id="contato">
+        <h3>Agende sua visita sem compromisso</h3>
+        <div class="sub">Preencha e envie direto para a nossa equipe pelo WhatsApp.</div>
+        <form id="leadForm">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input id="whatsapp" type="tel" placeholder="(41) 90000-0000" required>
+          </div>
+          <div class="field">
+            <label for="interesse">Tenho interesse em</label>
+            <select id="interesse">
+              <option>Natação para bebês</option>
+              <option>Natação infantil</option>
+              <option>Hidroginástica</option>
+              <option>Musculação</option>
+              <option>Pilates de estúdio</option>
+              <option>Spinning, zumba ou HIIT</option>
+              <option>Ainda não sei, quero conhecer</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar pelo WhatsApp</button>
+          <div class="form-msg" id="formMsg">Abrindo o WhatsApp com sua mensagem preenchida…</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="final-cta">
   <div class="wrap">
     <h2>Sua família já pode ter um novo hábito em comum.</h2>
-    <p>Agende uma visita e conheça a M Sports.</p>
+    <p>Agende uma visita, conheça as piscinas de perto e descubra a modalidade certa para cada fase da sua vida.</p>
     <div class="cta-row">
       <a href="#contato" class="btn" style="background:var(--navy-deep);color:#fff;">Agendar visita gratuita</a>
       <a href="tel:+554130445954" class="btn btn-light">Ligar: (41) 3044-5954</a>
@@ -363,21 +655,19 @@
 </footer>
 
 <script>
-  // Formulário WhatsApp
   const form = document.getElementById('leadForm');
-  if (form) {
-    const msg = document.getElementById('formMsg');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const whats = document.getElementById('whatsapp').value.trim();
-      const interesse = document.getElementById('interesse').value;
-      const texto = `Olá! Meu nome é ${nome} (contato: ${whats}). Interesse: ${interesse}. Gostaria de agendar uma visita.`;
-      const url = 'https://wa.me/554130445954?text=' + encodeURIComponent(texto);
-      if (msg) msg.classList.add('show');
-      window.open(url, '_blank');
-    });
-  }
+  const msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const whats = document.getElementById('whatsapp').value.trim();
+    const interesse = document.getElementById('interesse').value;
+    const texto = `Olá! Meu nome é ${nome} (contato: ${whats}). Tenho interesse em: ${interesse}. Gostaria de agendar uma visita à M Sports.`;
+    const url = 'https://wa.me/554130445954?text=' + encodeURIComponent(texto);
+    msg.classList.add('show');
+    window.open(url, '_blank');
+  });
 </script>
+
 </body>
 </html>
