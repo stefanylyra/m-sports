@@ -53,6 +53,11 @@
       justify-content: center;
     }
 
+    .sidebar-header img {
+      width: 35px;
+      height: 35px;
+    }
+
     .user-section {
       display: flex;
       align-items: center;
@@ -130,6 +135,9 @@
       color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       font-size: 14px;
+      border: none;
+      background: none;
+      width: 100%;
     }
 
     .nav-item:hover {
@@ -177,26 +185,6 @@
 
     .collapse-btn:hover {
       background: rgba(139, 92, 246, 0.2);
-    }
-
-    .logout-btn {
-      margin-top: auto;
-      padding: 10px 15px;
-      background: #ef4444;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: 100%;
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .logout-btn:hover {
-      background: #dc2626;
     }
 
     /* ============ MAIN CONTENT ============ */
@@ -250,6 +238,55 @@
       gap: 20px;
     }
 
+    .notification-icon {
+      position: relative;
+      cursor: pointer;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .notification-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #ef4444;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .admin-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .admin-menu:hover {
+      background: #f5f5f5;
+    }
+
+    .admin-avatar {
+      width: 35px;
+      height: 35px;
+      background: #8b5cf6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+    }
+
     /* ============ DASHBOARD ============ */
     .page-title {
       font-size: 28px;
@@ -278,6 +315,22 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden;
+    }
+
+    .metric-card .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ccc;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .metric-card .close-btn:hover {
+      color: #999;
     }
 
     .metric-header {
@@ -328,13 +381,25 @@
       color: #ef4444;
     }
 
+    .metric-comparison {
+      font-size: 12px;
+      color: #999;
+      margin-top: 8px;
+    }
+
+    .metric-chart {
+      margin-top: 16px;
+      height: 40px;
+      background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+      border-radius: 4px;
+    }
+
     /* ============ SECTION ============ */
     .section {
       background: white;
       border-radius: 12px;
       padding: 30px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      margin-bottom: 30px;
     }
 
     .section-header {
@@ -398,6 +463,12 @@
       gap: 12px;
       margin-bottom: 24px;
       flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 8px;
       align-items: center;
     }
 
@@ -473,7 +544,7 @@
       justify-content: center;
       color: #999;
       font-size: 24px;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .product-info h4 {
@@ -509,6 +580,12 @@
     .badge-danger {
       background: #fee2e2;
       color: #991b1b;
+    }
+
+    .price-original {
+      text-decoration: line-through;
+      color: #999;
+      margin-right: 8px;
     }
 
     .status-badge {
@@ -623,9 +700,9 @@
       padding: 30px;
       max-width: 600px;
       width: 90%;
-      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
       max-height: 90vh;
       overflow-y: auto;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
     }
 
     .modal-header {
@@ -668,8 +745,7 @@
       font-size: 14px;
     }
 
-    .form-label.required::after {
-      content: " *";
+    .form-label .required {
       color: #ef4444;
     }
 
@@ -693,18 +769,6 @@
       box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
     }
 
-    .form-input.error,
-    .form-select.error,
-    .form-textarea.error {
-      border-color: #ef4444;
-    }
-
-    .error-message {
-      color: #ef4444;
-      font-size: 12px;
-      margin-top: 4px;
-    }
-
     .form-actions {
       display: flex;
       gap: 12px;
@@ -715,48 +779,46 @@
       flex: 1;
     }
 
-    /* ============ CONTENT SECTIONS ============ */
-    .content-section {
-      display: none;
-    }
-
-    .content-section.active {
-      display: block;
-    }
-
     /* ============ LOGIN PAGE ============ */
     .login-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 100%);
+      z-index: 2000;
+    }
+
+    .login-container.show {
+      display: flex;
     }
 
     .login-box {
       background: white;
       padding: 40px;
       border-radius: 12px;
-      width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       max-width: 400px;
-      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+      width: 90%;
     }
 
-    .login-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-      justify-content: center;
-    }
-
-    .login-header div {
+    .login-box h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #1a1a1a;
       font-size: 24px;
     }
 
-    .login-header h1 {
-      font-size: 20px;
-      color: #1a1a1a;
+    .login-box p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
     }
 
     .login-box .form-group {
@@ -765,90 +827,76 @@
 
     .login-box .btn {
       width: 100%;
+      justify-content: center;
+      margin-top: 20px;
     }
 
-    /* ============ LOADING ============ */
-    .spinner {
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #8b5cf6;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
+    .error-message {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 13px;
     }
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .success-message {
+      background: #dcfce7;
+      color: #166534;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 13px;
     }
 
-    /* ============ RESPONSIVE ============ */
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 80px;
-      }
+    /* ============ HIDDEN SECTIONS ============ */
+    .content-section {
+      display: none;
+    }
 
-      .main-content {
-        margin-left: 80px;
-        padding: 15px;
-      }
+    .content-section.active {
+      display: block;
+    }
 
-      .metrics-grid {
-        grid-template-columns: 1fr;
-      }
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+    }
 
-      .header {
-        flex-direction: column;
-      }
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
 
-      .search-bar {
-        max-width: 100%;
-      }
+    .empty-state i {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
     }
   </style>
 </head>
 <body>
   <!-- LOGIN PAGE -->
-  <div id="loginPage" class="login-container">
+  <div id="loginContainer" class="login-container show">
     <div class="login-box">
-      <div class="login-header">
-        <div style="font-size: 24px;">🚀</div>
-        <div>
-          <h1>Pippit AI</h1>
-        </div>
+      <h1>🚀 Pippit AI</h1>
+      <p>Admin Panel</p>
+      <div id="loginError" class="error-message" style="display: none;"></div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" id="loginEmail" placeholder="admin@pippit.com">
       </div>
-
-      <form id="loginForm" onsubmit="handleLogin(event)">
-        <div class="form-group">
-          <label class="form-label required">Email</label>
-          <input type="email" id="loginEmail" class="form-input" placeholder="seu@email.com" required>
-          <div class="error-message" id="emailError"></div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">Senha</label>
-          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
-          <div class="error-message" id="passwordError"></div>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 12px;">
-          <i class="fas fa-sign-in-alt"></i>
-          Entrar
-        </button>
-      </form>
-
-      <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="mostrarModalCadastro()">
-        <i class="fas fa-user-plus"></i>
-        Criar Conta
-      </button>
-
-      <div id="loginError" style="color: #ef4444; text-align: center; margin-top: 16px; display: none;"></div>
+      <div class="form-group">
+        <label class="form-label">Senha</label>
+        <input type="password" class="form-input" id="loginPassword" placeholder="••••••••">
+      </div>
+      <button class="btn btn-primary" onclick="handleLogin()" style="width: 100%;">Entrar</button>
     </div>
   </div>
 
-  <!-- MAIN APP -->
-  <div id="mainApp" class="container" style="display: none;">
+  <div class="container">
     <!-- SIDEBAR -->
     <div class="sidebar" id="sidebar">
       <div class="sidebar-header">
@@ -859,7 +907,7 @@
       <div class="user-section">
         <div class="user-avatar">👤</div>
         <div class="user-info">
-          <div class="user-name" id="adminName">Administrator</div>
+          <div class="user-name" id="userNameSidebar">Administrador</div>
           <div class="user-status">
             <span class="online"></span>Online
           </div>
@@ -867,39 +915,34 @@
       </div>
 
       <div class="section-title">Menu</div>
-      <a class="nav-item active" onclick="showPage('dashboard')">
+      <button class="nav-item active" onclick="showPage('dashboard')">
         <i class="fas fa-chart-line"></i>
         <span>Dashboard</span>
-      </a>
-      <a class="nav-item" onclick="showPage('produtos')">
+      </button>
+      <button class="nav-item" onclick="showPage('produtos')">
         <i class="fas fa-box"></i>
         <span>Produtos</span>
-      </a>
-      <a class="nav-item" onclick="showPage('categorias')">
+      </button>
+      <button class="nav-item" onclick="showPage('categorias')">
         <i class="fas fa-tags"></i>
         <span>Categorias</span>
-      </a>
-      <a class="nav-item" onclick="showPage('lojas')">
+      </button>
+      <button class="nav-item" onclick="showPage('lojas')">
         <i class="fas fa-store"></i>
         <span>Lojas</span>
-      </a>
-      <a class="nav-item" onclick="showPage('cupons')">
+      </button>
+      <button class="nav-item" onclick="showPage('cupons')">
         <i class="fas fa-ticket-alt"></i>
         <span>Cupons</span>
-      </a>
-      <a class="nav-item" onclick="showPage('configuracoes')">
-        <i class="fas fa-cog"></i>
-        <span>Configurações</span>
-      </a>
+      </button>
+      <button class="nav-item" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Sair</span>
+      </button>
 
       <button class="collapse-btn" onclick="toggleSidebar()">
         <i class="fas fa-arrow-left"></i>
-        <span>Recolher</span>
-      </button>
-
-      <button class="logout-btn" onclick="handleLogout()">
-        <i class="fas fa-sign-out-alt"></i>
-        <span>Sair</span>
+        <span>Recolher menu</span>
       </button>
     </div>
 
@@ -908,78 +951,96 @@
       <!-- HEADER -->
       <div class="header">
         <div class="search-bar">
-          <input type="text" placeholder="Pesquisar..." id="globalSearch" onkeyup="filterTabela()">
+          <input type="text" placeholder="Pesquisar produtos, pedidos, clientes..." id="globalSearch" onkeyup="handleGlobalSearch()">
+        </div>
+        <div class="header-right">
+          <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+            <div class="notification-badge" id="notificationCount">0</div>
+          </div>
+          <div class="admin-menu">
+            <div class="admin-avatar">👤</div>
+            <span id="userNameHeader">Administrador</span>
+            <i class="fas fa-chevron-down" style="font-size: 12px;"></i>
+          </div>
         </div>
       </div>
 
       <!-- ============ DASHBOARD ============ -->
       <div id="dashboard" class="content-section active">
         <h1 class="page-title">Dashboard</h1>
-        <p class="page-subtitle">Visão geral do seu negócio</p>
+        <p class="page-subtitle">Visão geral da sua loja</p>
 
         <div class="metrics-grid" id="metricsGrid">
           <div class="metric-card">
             <div class="metric-header">
               <div>
-                <div class="metric-title">Total de Produtos</div>
-                <div class="metric-value" id="totalProdutos">0</div>
+                <div class="metric-title">Pedidos</div>
+                <div class="metric-value" id="metricPedidos">0</div>
                 <div class="metric-change">
                   <i class="fas fa-arrow-up"></i>
-                  <span id="produtosPercent">0%</span>
+                  <span id="metricPedidosPercent">0</span>%
+                  <span class="metric-comparison">vs. mês anterior</span>
                 </div>
               </div>
               <div class="metric-icon purple">
-                <i class="fas fa-box"></i>
+                <i class="fas fa-shopping-cart"></i>
               </div>
             </div>
+            <div class="metric-chart"></div>
           </div>
 
           <div class="metric-card">
             <div class="metric-header">
               <div>
-                <div class="metric-title">Lojas Ativas</div>
-                <div class="metric-value" id="totalLojas">0</div>
+                <div class="metric-title">Receita</div>
+                <div class="metric-value" id="metricReceita">R$ 0</div>
                 <div class="metric-change">
                   <i class="fas fa-arrow-up"></i>
-                  <span id="lojasPercent">0%</span>
+                  <span id="metricReceitaPercent">0</span>%
+                  <span class="metric-comparison">vs. mês anterior</span>
                 </div>
               </div>
               <div class="metric-icon green">
-                <i class="fas fa-store"></i>
+                <i class="fas fa-dollar-sign"></i>
               </div>
             </div>
+            <div class="metric-chart"></div>
           </div>
 
           <div class="metric-card">
             <div class="metric-header">
               <div>
-                <div class="metric-title">Cupons Ativos</div>
-                <div class="metric-value" id="totalCupons">0</div>
+                <div class="metric-title">Produtos</div>
+                <div class="metric-value" id="metricProdutos">0</div>
                 <div class="metric-change">
-                  <i class="fas fa-arrow-up"></i>
-                  <span id="cuponsPercent">0%</span>
+                  <span id="metricProdutosPercent">0</span>%
+                  <span class="metric-comparison">total cadastrado</span>
                 </div>
               </div>
               <div class="metric-icon blue">
-                <i class="fas fa-ticket-alt"></i>
+                <i class="fas fa-box"></i>
               </div>
             </div>
+            <div class="metric-chart"></div>
           </div>
 
           <div class="metric-card">
             <div class="metric-header">
               <div>
-                <div class="metric-title">Categorias</div>
-                <div class="metric-value" id="totalCategorias">0</div>
+                <div class="metric-title">Lojas</div>
+                <div class="metric-value" id="metricLojas">0</div>
                 <div class="metric-change">
                   <i class="fas fa-arrow-up"></i>
-                  <span id="categoriasPercent">0%</span>
+                  <span id="metricLojasPercent">0</span>%
+                  <span class="metric-comparison">ativas</span>
                 </div>
               </div>
               <div class="metric-icon orange">
-                <i class="fas fa-tags"></i>
+                <i class="fas fa-store"></i>
               </div>
             </div>
+            <div class="metric-chart"></div>
           </div>
         </div>
       </div>
@@ -988,9 +1049,9 @@
       <div id="produtos" class="content-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <div>
-            <h1 class="page-title">Produtos</h1>
+            <h1 class="page-title">Produtos Cadastrados</h1>
           </div>
-          <button class="btn btn-primary" onclick="abrirModalProduto()">
+          <button class="btn btn-primary" onclick="openProductModal()">
             <i class="fas fa-plus"></i>
             Novo Produto
           </button>
@@ -998,14 +1059,17 @@
 
         <div class="section">
           <div class="filters-container">
-            <input type="text" placeholder="Pesquisar produto..." class="filter-select" id="searchProduto" onkeyup="filterTabela()" style="flex: 1; max-width: 300px;">
-            <select class="filter-select" id="categoriaProdutoFilter" onchange="filterTabela()">
+            <div class="filter-group">
+              <i class="fas fa-search" style="color: #666; font-size: 16px;"></i>
+              <input type="text" placeholder="Pesquisar produto..." class="filter-select" id="searchProduto" onkeyup="filterProdutos()" style="border: 1px solid #e0e0e0; flex: 1;">
+            </div>
+            <select class="filter-select" id="categoriaProduto" onchange="filterProdutos()">
               <option value="">Todas Categorias</option>
             </select>
-            <select class="filter-select" id="lojaProdutoFilter" onchange="filterTabela()">
+            <select class="filter-select" id="lojaProduto" onchange="filterProdutos()">
               <option value="">Todas Lojas</option>
             </select>
-            <select class="filter-select" id="statusProdutoFilter" onchange="filterTabela()">
+            <select class="filter-select" id="statusProduto" onchange="filterProdutos()">
               <option value="">Todos Status</option>
               <option value="Ativo">Ativo</option>
               <option value="Inativo">Inativo</option>
@@ -1013,34 +1077,55 @@
           </div>
 
           <div class="table-container">
-            <table id="produtosTabela">
+            <table id="produtosTable">
               <thead>
                 <tr>
+                  <th><input type="checkbox"></th>
                   <th>Produto</th>
                   <th>Categoria</th>
                   <th>Loja</th>
-                  <th>Preço Original</th>
-                  <th>Preço Venda</th>
+                  <th>Preço</th>
                   <th>Status</th>
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody id="produtosCorpo">
-                <tr>
-                  <td colspan="7" style="text-align: center; padding: 40px;">Nenhum produto cadastrado</td>
-                </tr>
+              <tbody id="produtosTableBody">
+                <tr><td colspan="7" class="loading"><i class="fas fa-spinner fa-spin"></i> Carregando...</td></tr>
               </tbody>
             </table>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+            <p style="font-size: 13px; color: #666;" id="paginationInfo">Carregando...</p>
+            <div class="pagination" id="paginationContainer"></div>
           </div>
         </div>
       </div>
 
       <!-- ============ CATEGORIAS ============ -->
       <div id="categorias" class="content-section">
-        <h1 class="page-title">Categorias</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <h1 class="page-title">Categorias</h1>
+          <button class="btn btn-primary" onclick="openCategoryModal()">
+            <i class="fas fa-plus"></i>
+            Nova Categoria
+          </button>
+        </div>
+
         <div class="section">
-          <div id="categoriasLista" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
-            <!-- Preenchido por JavaScript -->
+          <div class="table-container">
+            <table id="categoriasTable">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Produtos</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="categoriasTableBody">
+                <tr><td colspan="3" class="loading"><i class="fas fa-spinner fa-spin"></i> Carregando...</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -1049,21 +1134,26 @@
       <div id="lojas" class="content-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <h1 class="page-title">Lojas</h1>
+          <button class="btn btn-primary" onclick="openStoreModal()">
+            <i class="fas fa-plus"></i>
+            Nova Loja
+          </button>
         </div>
+
         <div class="section">
           <div class="table-container">
-            <table>
+            <table id="lojasTable">
               <thead>
                 <tr>
                   <th>Loja</th>
                   <th>Tipo</th>
                   <th>Localização</th>
-                  <th>Avaliação</th>
                   <th>Status</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
-              <tbody id="lojasCorpo">
-                <!-- Preenchido por JavaScript -->
+              <tbody id="lojasTableBody">
+                <tr><td colspan="5" class="loading"><i class="fas fa-spinner fa-spin"></i> Carregando...</td></tr>
               </tbody>
             </table>
           </div>
@@ -1073,10 +1163,8 @@
       <!-- ============ CUPONS ============ -->
       <div id="cupons" class="content-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-          <div>
-            <h1 class="page-title">Cupons de Desconto</h1>
-          </div>
-          <button class="btn btn-primary" onclick="abrirModalCupom()">
+          <h1 class="page-title">Cupons</h1>
+          <button class="btn btn-primary" onclick="openCouponModal()">
             <i class="fas fa-plus"></i>
             Novo Cupom
           </button>
@@ -1084,227 +1172,184 @@
 
         <div class="section">
           <div class="table-container">
-            <table id="cupomsTabela">
+            <table id="cupomsTable">
               <thead>
                 <tr>
                   <th>Código</th>
-                  <th>Loja</th>
-                  <th>Desconto</th>
                   <th>Descrição</th>
-                  <th>Mínimo</th>
-                  <th>Expira em</th>
+                  <th>Desconto</th>
+                  <th>Válido até</th>
                   <th>Status</th>
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody id="cupomsCorpo">
-                <tr>
-                  <td colspan="8" style="text-align: center; padding: 40px;">Nenhum cupom cadastrado</td>
-                </tr>
+              <tbody id="cupomsTableBody">
+                <tr><td colspan="6" class="loading"><i class="fas fa-spinner fa-spin"></i> Carregando...</td></tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-
-      <!-- ============ CONFIGURAÇÕES ============ -->
-      <div id="configuracoes" class="content-section">
-        <h1 class="page-title">Configurações</h1>
-        <div class="section" style="max-width: 600px;">
-          <h3 style="margin-bottom: 20px; font-weight: 600;">Informações da Loja</h3>
-          
-          <div class="form-group">
-            <label class="form-label">Nome da Empresa</label>
-            <input type="text" class="form-input" id="configNome" placeholder="Pippit Store">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Email de Contato</label>
-            <input type="email" class="form-input" id="configEmail" placeholder="admin@pippit.com">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Telefone</label>
-            <input type="tel" class="form-input" id="configTelefone" placeholder="(11) 9999-9999">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Endereço</label>
-            <input type="text" class="form-input" id="configEndereco" placeholder="São Paulo, SP">
-          </div>
-
-          <button class="btn btn-primary" onclick="salvarConfiguracoes()">
-            <i class="fas fa-save"></i>
-            Salvar Configurações
-          </button>
-        </div>
-      </div>
     </div>
   </div>
 
-  <!-- MODAL PRODUTO -->
-  <div class="modal" id="produtoModal">
+  <!-- MODAL - NOVO PRODUTO -->
+  <div class="modal" id="productModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="produtoModalTitulo">Novo Produto</h2>
-        <button class="modal-close" onclick="fecharModalProduto()">×</button>
+        <h2 class="modal-title">Novo Produto</h2>
+        <button class="modal-close" onclick="closeProductModal()">×</button>
       </div>
-      <form id="produtoForm" onsubmit="salvarProduto(event)">
+      <form id="productForm" onsubmit="saveProduct(event)">
         <div class="form-group">
-          <label class="form-label required">Nome do Produto</label>
+          <label class="form-label">Nome do Produto <span class="required">*</span></label>
           <input type="text" class="form-input" id="produtoNome" required>
-          <div class="error-message" id="nomeError"></div>
         </div>
-
         <div class="form-group">
-          <label class="form-label required">Categoria</label>
-          <select class="form-select" id="produtoCategoria" required>
+          <label class="form-label">Categoria <span class="required">*</span></label>
+          <select class="form-select" id="produtoCategoria" required onchange="updateSubcategories()">
             <option value="">Selecione</option>
           </select>
-          <div class="error-message" id="categoriaError"></div>
         </div>
-
+        <div class="form-group" id="subcategoriaGroup" style="display: none;">
+          <label class="form-label">Subcategoria</label>
+          <select class="form-select" id="produtoSubcategoria">
+            <option value="">Selecione</option>
+          </select>
+        </div>
         <div class="form-group">
-          <label class="form-label required">Loja</label>
+          <label class="form-label">Loja <span class="required">*</span></label>
           <select class="form-select" id="produtoLoja" required>
             <option value="">Selecione</option>
           </select>
-          <div class="error-message" id="lojaError"></div>
         </div>
-
         <div class="form-group">
-          <label class="form-label required">Preço Original (R$)</label>
-          <input type="number" class="form-input" id="produtoPrecoOriginal" step="0.01" required>
-          <div class="error-message" id="precoOriginalError"></div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">Preço de Venda (R$)</label>
-          <input type="number" class="form-input" id="produtoPrecoVenda" step="0.01" required>
-          <div class="error-message" id="precoVendaError"></div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">Link Afiliado</label>
-          <input type="url" class="form-input" id="produtoLink" placeholder="https://..." required>
-          <div class="error-message" id="linkError"></div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">URL da Imagem Principal</label>
+          <label class="form-label">Imagem (URL) <span class="required">*</span></label>
           <input type="url" class="form-input" id="produtoImg" placeholder="https://..." required>
-          <div class="error-message" id="imgError"></div>
         </div>
-
         <div class="form-group">
-          <label class="form-label required">Status</label>
-          <select class="form-select" id="produtoStatus" required>
+          <label class="form-label">Preço Original (R$) <span class="required">*</span></label>
+          <input type="number" class="form-input" id="produtoPrecoAntigo" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Preço Promoção (R$) <span class="required">*</span></label>
+          <input type="number" class="form-input" id="produtoPrecoNovo" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Link Afiliado <span class="required">*</span></label>
+          <input type="url" class="form-input" id="produtoLink" placeholder="https://..." required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Status</label>
+          <select class="form-select" id="produtoStatus">
             <option value="Ativo">Ativo</option>
             <option value="Inativo">Inativo</option>
           </select>
         </div>
-
         <div class="form-actions">
-          <button type="button" class="btn btn-secondary" onclick="fecharModalProduto()">Cancelar</button>
+          <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Cancelar</button>
           <button type="submit" class="btn btn-primary">Salvar Produto</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- MODAL CUPOM -->
-  <div class="modal" id="cupomModal">
+  <!-- MODAL - NOVA CATEGORIA -->
+  <div class="modal" id="categoryModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title">Novo Cupom</h2>
-        <button class="modal-close" onclick="fecharModalCupom()">×</button>
+        <h2 class="modal-title">Nova Categoria</h2>
+        <button class="modal-close" onclick="closeCategoryModal()">×</button>
       </div>
-      <form id="cupomForm" onsubmit="salvarCupom(event)">
+      <form id="categoryForm" onsubmit="saveCategory(event)">
         <div class="form-group">
-          <label class="form-label required">Código do Cupom</label>
-          <input type="text" class="form-input" id="cupomCodigo" placeholder="PROMO20" required>
-          <div class="error-message" id="codigoError"></div>
+          <label class="form-label">Nome <span class="required">*</span></label>
+          <input type="text" class="form-input" id="categoryNome" required>
         </div>
-
-        <div class="form-group">
-          <label class="form-label required">Loja</label>
-          <select class="form-select" id="cupomLoja" required>
-            <option value="">Selecione</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">Descrição</label>
-          <input type="text" class="form-input" id="cupomDescricao" placeholder="Desconto especial" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">Tipo de Desconto</label>
-          <select class="form-select" id="cupomTipo" required onchange="atualizarCamposDesconto()">
-            <option value="percentual">Percentual (%)</option>
-            <option value="fixo">Valor Fixo (R$)</option>
-            <option value="frete">Frete Grátis</option>
-          </select>
-        </div>
-
-        <div class="form-group" id="grupoValorDesconto">
-          <label class="form-label required">Valor do Desconto</label>
-          <input type="number" class="form-input" id="cupomValor" step="0.01" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Valor Mínimo (R$)</label>
-          <input type="number" class="form-input" id="cupomMinimo" step="0.01" placeholder="0">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label required">Data de Expiração</label>
-          <input type="date" class="form-input" id="cupomExpiracao" required>
-        </div>
-
         <div class="form-actions">
-          <button type="button" class="btn btn-secondary" onclick="fecharModalCupom()">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Salvar Cupom</button>
+          <button type="button" class="btn btn-secondary" onclick="closeCategoryModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Criar Categoria</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- MODAL CADASTRO -->
-  <div class="modal" id="cadastroModal">
-    <div class="modal-content" style="max-width: 400px;">
+  <!-- MODAL - NOVA LOJA -->
+  <div class="modal" id="storeModal">
+    <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title">Criar Conta</h2>
-        <button class="modal-close" onclick="fecharModalCadastro()">×</button>
+        <h2 class="modal-title">Nova Loja</h2>
+        <button class="modal-close" onclick="closeStoreModal()">×</button>
       </div>
-      <form id="cadastroForm" onsubmit="handleRegister(event)">
+      <form id="storeForm" onsubmit="saveStore(event)">
         <div class="form-group">
-          <label class="form-label required">Nome</label>
-          <input type="text" class="form-input" id="cadastroNome" required>
-          <div class="error-message" id="nomeRegError"></div>
+          <label class="form-label">Nome <span class="required">*</span></label>
+          <input type="text" class="form-input" id="storeNome" required>
         </div>
-
         <div class="form-group">
-          <label class="form-label required">Email</label>
-          <input type="email" class="form-input" id="cadastroEmail" required>
-          <div class="error-message" id="emailRegError"></div>
+          <label class="form-label">Tipo <span class="required">*</span></label>
+          <select class="form-select" id="storeTipo" required>
+            <option value="">Selecione</option>
+            <option value="Marketplace">Marketplace</option>
+            <option value="Varejo">Varejo</option>
+            <option value="Farmácia">Farmácia</option>
+            <option value="Esportes">Esportes</option>
+            <option value="Pet Shop">Pet Shop</option>
+            <option value="Casa e Decoração">Casa e Decoração</option>
+          </select>
         </div>
-
         <div class="form-group">
-          <label class="form-label required">Senha</label>
-          <input type="password" class="form-input" id="cadastroSenha" placeholder="Mínimo 6 caracteres" required>
-          <div class="error-message" id="senhaRegError"></div>
+          <label class="form-label">Localização</label>
+          <input type="text" class="form-input" id="storeLocal" placeholder="Cidade, Estado">
         </div>
-
         <div class="form-group">
-          <label class="form-label required">Confirmar Senha</label>
-          <input type="password" class="form-input" id="cadastroConfirma" required>
-          <div class="error-message" id="confirmaError"></div>
+          <label class="form-label">Status</label>
+          <select class="form-select" id="storeStatus">
+            <option value="Ativa">Ativa</option>
+            <option value="Inativa">Inativa</option>
+          </select>
         </div>
-
         <div class="form-actions">
-          <button type="button" class="btn btn-secondary" onclick="fecharModalCadastro()">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Criar Conta</button>
+          <button type="button" class="btn btn-secondary" onclick="closeStoreModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Criar Loja</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL - NOVO CUPOM -->
+  <div class="modal" id="couponModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Novo Cupom</h2>
+        <button class="modal-close" onclick="closeCouponModal()">×</button>
+      </div>
+      <form id="couponForm" onsubmit="saveCoupon(event)">
+        <div class="form-group">
+          <label class="form-label">Código <span class="required">*</span></label>
+          <input type="text" class="form-input" id="couponCodigo" placeholder="EX: CUPOM20" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descrição <span class="required">*</span></label>
+          <input type="text" class="form-input" id="couponDescricao" placeholder="20% OFF em..." required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Loja <span class="required">*</span></label>
+          <select class="form-select" id="couponLoja" required>
+            <option value="">Selecione</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Desconto <span class="required">*</span></label>
+          <input type="text" class="form-input" id="couponDesconto" placeholder="20% ou R$ 10,00" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Válido até <span class="required">*</span></label>
+          <input type="date" class="form-input" id="couponExpiracao" required>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="closeCouponModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Criar Cupom</button>
         </div>
       </form>
     </div>
@@ -1316,7 +1361,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 
   <script>
-    // Firebase Config
+    // ==================== FIREBASE CONFIG ====================
     const firebaseConfig = {
       apiKey: "AIzaSyCydy0v27JxNvKBW3aqFa3Uel8Slkdtcx4",
       authDomain: "central-promocoes.firebaseapp.com",
@@ -1330,562 +1375,91 @@
     const db = firebase.firestore();
     const auth = firebase.auth();
 
+    // ==================== SUBCATEGORIAS ====================
+    const SUBCATEGORIAS = {
+      "sapatos": ["Masculino", "Feminino", "Infantil"],
+      "roupas-infantis": ["Masculino", "Feminino"],
+      "beleza": ["Maquiagem", "Perfumaria", "Cuidados capilares", "Cuidados com a Pele"],
+      "eletronicos": ["Fones", "Eletroportáteis", "Computadores", "Caixa de Som", "Games", "Celulares", "PC Gamer"],
+      "eletrodomesticos": ["Máquina de Lavar", "TV", "Geladeira", "Microondas", "Forno", "Fogão"],
+      "festividades": ["Natal", "Copa do Mundo", "Halloween", "Ano Novo", "Aniversário"],
+      "fitness": ["Musculação", "Suplementos", "Roupas Fitness", "Equipamentos"],
+      "automotivo": ["Acessórios", "Som Automotivo", "Ferramentas", "Cuidados"],
+      "acessorios": ["Brincos", "Cordões", "Pulseiras"],
+      "roupas-masculinas": ["Camisas", "Casacos", "Íntimas", "Conjuntos", "Calças"],
+      "casa-construcao": ["Sala", "Cozinha", "Quarto", "Banheiro", "Outros"],
+      "roupas-femininas": ["Camisas", "Casacos", "Íntimas", "Calças", "Shorts", "Saias", "Conjuntos", "Vestidos"],
+      "bolsas": ["Masculinas", "Femininas"],
+      "relogios": [],
+      "mae-bebe": [],
+      "pets": [],
+      "brinquedos": [],
+      "papelaria": [],
+      "limpeza": [],
+      "viagens-bagagens": []
+    };
+
     // ==================== VARIÁVEIS GLOBAIS ====================
-    let produtosGlobais = [];
-    let lojasGlobais = [];
-    let cupomsGlobais = [];
-    let categoriasGlobais = [];
-    let usuarioAtual = null;
-
-    const CATEGORIAS = [
-      "Roupas Masculinas", "Roupas Femininas", "Roupas Infantis", "Sapatos",
-      "Relógios", "Acessórios", "Bolsas", "Eletrônicos", "Eletrodomésticos",
-      "Fitness", "Automotivo", "Mãe & Bebê", "Beleza", "Pets", "Brinquedos",
-      "Papelaria", "Limpeza", "Casa & Construção", "Viagens", "Festividades"
-    ];
-
-    const LOJAS = [
-      { nome: "Shopee", tipo: "Marketplace", localizacao: "São Paulo, SP", avaliacao: "4.7" },
-      { nome: "Mercado Livre", tipo: "Marketplace", localizacao: "Osasco, SP", avaliacao: "4.8" },
-      { nome: "Amazon Brasil", tipo: "Marketplace", localizacao: "São Paulo, SP", avaliacao: "4.6" },
-      { nome: "Magazine Luiza", tipo: "Varejo", localizacao: "Franca, SP", avaliacao: "4.5" },
-      { nome: "Magalu", tipo: "Varejo", localizacao: "São Paulo, SP", avaliacao: "4.4" }
-    ];
+    let currentUser = null;
+    let allProdutos = [];
+    let allCategorias = [];
+    let allLojas = [];
+    let allCupons = [];
+    let editingProductId = null;
+    let currentPage = 1;
+    const itemsPerPage = 10;
 
     // ==================== INICIALIZAÇÃO ====================
-    document.addEventListener("DOMContentLoaded", () => {
-      verificarAutenticacao();
-      carregarDados();
+    document.addEventListener("DOMContentLoaded", function() {
+      checkAuth();
+      loadCategorias();
+      loadLojas();
+      loadCupons();
+      updateDashboard();
     });
 
     // ==================== AUTENTICAÇÃO ====================
-    function verificarAutenticacao() {
+    function checkAuth() {
       auth.onAuthStateChanged(user => {
         if (user) {
-          usuarioAtual = user;
-          document.getElementById("loginPage").style.display = "none";
-          document.getElementById("mainApp").style.display = "flex";
-          document.getElementById("adminName").innerText = user.email.split("@")[0];
-          carregarDados();
+          currentUser = user;
+          document.getElementById('loginContainer').classList.remove('show');
+          document.getElementById('userNameSidebar').innerText = user.email.split('@')[0];
+          document.getElementById('userNameHeader').innerText = user.email.split('@')[0];
+          loadProdutos();
         } else {
-          usuarioAtual = null;
-          document.getElementById("loginPage").style.display = "flex";
-          document.getElementById("mainApp").style.display = "none";
+          document.getElementById('loginContainer').classList.add('show');
+          currentUser = null;
         }
       });
     }
 
-    function handleLogin(event) {
-      event.preventDefault();
-      const email = document.getElementById("loginEmail").value.trim();
-      const password = document.getElementById("loginPassword").value;
+    function handleLogin() {
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const errorDiv = document.getElementById('loginError');
 
       if (!email || !password) {
-        mostrarErro("Preencha todos os campos", "loginError");
+        errorDiv.innerText = '⚠️ Preencha email e senha';
+        errorDiv.style.display = 'block';
         return;
       }
 
       auth.signInWithEmailAndPassword(email, password)
         .then(() => {
-          document.getElementById("loginForm").reset();
-          limparErros(["loginError", "emailError", "passwordError"]);
+          errorDiv.style.display = 'none';
         })
-        .catch(erro => {
-          let mensagem = "Erro ao fazer login";
-          if (erro.code === "auth/user-not-found") mensagem = "Usuário não encontrado";
-          if (erro.code === "auth/wrong-password") mensagem = "Senha incorreta";
-          mostrarErro(mensagem, "loginError");
+        .catch(err => {
+          errorDiv.innerText = '❌ ' + (err.message === 'Firebase: Error (auth/user-not-found).' ? 'Usuário não encontrado' : 'Email ou senha incorretos');
+          errorDiv.style.display = 'block';
         });
     }
 
-    function handleRegister(event) {
-      event.preventDefault();
-      const nome = document.getElementById("cadastroNome").value.trim();
-      const email = document.getElementById("cadastroEmail").value.trim();
-      const senha = document.getElementById("cadastroSenha").value;
-      const confirma = document.getElementById("cadastroConfirma").value;
-
-      limparErros(["nomeRegError", "emailRegError", "senhaRegError", "confirmaError"]);
-
-      if (!nome) {
-        mostrarErro("Nome é obrigatório", "nomeRegError");
-        return;
-      }
-
-      if (!email) {
-        mostrarErro("Email é obrigatório", "emailRegError");
-        return;
-      }
-
-      if (senha.length < 6) {
-        mostrarErro("Senha deve ter pelo menos 6 caracteres", "senhaRegError");
-        return;
-      }
-
-      if (senha !== confirma) {
-        mostrarErro("Senhas não coincidem", "confirmaError");
-        return;
-      }
-
-      auth.createUserWithEmailAndPassword(email, senha)
-        .then(userCredential => {
-          return db.collection("admins").doc(userCredential.user.uid).set({
-            nome: nome,
-            email: email,
-            criadoEm: new Date()
-          });
-        })
-        .then(() => {
-          alert("Conta criada com sucesso! Faça login para continuar.");
-          fecharModalCadastro();
-          document.getElementById("loginForm").reset();
-        })
-        .catch(erro => {
-          let mensagem = "Erro ao criar conta";
-          if (erro.code === "auth/email-already-in-use") mensagem = "Email já está em uso";
-          if (erro.code === "auth/invalid-email") mensagem = "Email inválido";
-          mostrarErro(mensagem, "cadastroForm");
-        });
-    }
-
-    function handleLogout() {
-      if (confirm("Deseja sair?")) {
-        auth.signOut().then(() => {
-          usuarioAtual = null;
-          document.getElementById("loginPage").style.display = "flex";
-          document.getElementById("mainApp").style.display = "none";
-        });
-      }
-    }
-
-    // ==================== CARREGAR DADOS ====================
-    function carregarDados() {
-      carregarProdutos();
-      carregarLojas();
-      carregarCupons();
-      carregarCategorias();
-      preencherSelects();
-      atualizarMetricas();
-    }
-
-    function carregarProdutos() {
-      db.collection("produtos").onSnapshot(snapshot => {
-        produtosGlobais = [];
-        snapshot.forEach(doc => {
-          produtosGlobais.push({ id: doc.id, ...doc.data() });
-        });
-        atualizarTabelaProdutos();
-        atualizarMetricas();
-      }, error => {
-        console.error("Erro ao carregar produtos:", error);
+    function logout() {
+      auth.signOut().then(() => {
+        currentUser = null;
+        document.getElementById('loginContainer').classList.add('show');
       });
-    }
-
-    function carregarLojas() {
-      db.collection("lojas").onSnapshot(snapshot => {
-        lojasGlobais = [];
-        snapshot.forEach(doc => {
-          lojasGlobais.push({ id: doc.id, ...doc.data() });
-        });
-        atualizarTabelaLojas();
-        atualizarMetricas();
-      }, error => {
-        console.error("Erro ao carregar lojas:", error);
-        lojasGlobais = LOJAS;
-        atualizarTabelaLojas();
-      });
-    }
-
-    function carregarCupons() {
-      db.collection("cupons").onSnapshot(snapshot => {
-        cupomsGlobais = [];
-        snapshot.forEach(doc => {
-          cupomsGlobais.push({ id: doc.id, ...doc.data() });
-        });
-        atualizarTabelaCupons();
-        atualizarMetricas();
-      }, error => {
-        console.error("Erro ao carregar cupons:", error);
-      });
-    }
-
-    function carregarCategorias() {
-      categoriasGlobais = CATEGORIAS;
-      atualizarTabelaCategorias();
-    }
-
-    function preencherSelects() {
-      const selectCategoria = document.getElementById("produtoCategoria");
-      const selectCupomLoja = document.getElementById("cupomLoja");
-      const selectProdutoLoja = document.getElementById("produtoLoja");
-      const selectFilterCategoria = document.getElementById("categoriaProdutoFilter");
-      const selectFilterLoja = document.getElementById("lojaProdutoFilter");
-
-      // Preencher categorias
-      selectCategoria.innerHTML = '<option value="">Selecione</option>';
-      categoriasGlobais.forEach(cat => {
-        const option = document.createElement("option");
-        option.value = cat;
-        option.textContent = cat;
-        selectCategoria.appendChild(option);
-
-        const option2 = document.createElement("option");
-        option2.value = cat;
-        option2.textContent = cat;
-        selectFilterCategoria.appendChild(option2);
-      });
-
-      // Preencher lojas
-      const lojas = lojasGlobais.length > 0 ? lojasGlobais : LOJAS;
-      selectProdutoLoja.innerHTML = '<option value="">Selecione</option>';
-      selectCupomLoja.innerHTML = '<option value="">Selecione</option>';
-      selectFilterLoja.innerHTML = '<option value="">Todas Lojas</option>';
-
-      lojas.forEach(loja => {
-        const nomeLoja = loja.nome || loja;
-
-        const opt1 = document.createElement("option");
-        opt1.value = nomeLoja;
-        opt1.textContent = nomeLoja;
-        selectProdutoLoja.appendChild(opt1);
-
-        const opt2 = document.createElement("option");
-        opt2.value = nomeLoja;
-        opt2.textContent = nomeLoja;
-        selectCupomLoja.appendChild(opt2);
-
-        const opt3 = document.createElement("option");
-        opt3.value = nomeLoja;
-        opt3.textContent = nomeLoja;
-        selectFilterLoja.appendChild(opt3);
-      });
-    }
-
-    // ==================== ATUALIZAR TABELAS ====================
-    function atualizarTabelaProdutos() {
-      const tbody = document.getElementById("produtosCorpo");
-
-      if (produtosGlobais.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 40px;">Nenhum produto cadastrado</td></tr>';
-        return;
-      }
-
-      tbody.innerHTML = produtosGlobais.map(prod => `
-        <tr>
-          <td>
-            <div class="product-cell">
-              <img src="${prod.img}" class="product-image">
-              <div class="product-info">
-                <h4>${prod.nome}</h4>
-                <p>ID: ${prod.id.substring(0, 8)}</p>
-              </div>
-            </div>
-          </td>
-          <td><span class="badge badge-primary">${prod.categoria}</span></td>
-          <td>${prod.loja}</td>
-          <td>R$ ${parseFloat(prod.precoOriginal).toFixed(2).replace(".", ",")}</td>
-          <td>R$ ${parseFloat(prod.precoVenda).toFixed(2).replace(".", ",")}</td>
-          <td><span class="status-badge ${prod.status === 'Ativo' ? 'active' : 'inactive'}"><span class="status-dot"></span>${prod.status}</span></td>
-          <td>
-            <div class="action-buttons">
-              <button class="btn-icon" onclick="editarProduto('${prod.id}')" title="Editar">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button class="btn-icon" onclick="deletarProduto('${prod.id}')" title="Deletar">
-                <i class="fas fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-      `).join("");
-    }
-
-    function atualizarTabelaLojas() {
-      const tbody = document.getElementById("lojasCorpo");
-      const lojas = lojasGlobais.length > 0 ? lojasGlobais : LOJAS;
-
-      tbody.innerHTML = lojas.map(loja => `
-        <tr>
-          <td><strong>${loja.nome}</strong></td>
-          <td>${loja.tipo || "Marketplace"}</td>
-          <td>${loja.localizacao || "São Paulo, SP"}</td>
-          <td>⭐ ${loja.avaliacao || "4.5"}</td>
-          <td><span class="status-badge active"><span class="status-dot"></span>Ativa</span></td>
-        </tr>
-      `).join("");
-    }
-
-    function atualizarTabelaCupons() {
-      const tbody = document.getElementById("cupomsCorpo");
-
-      if (cupomsGlobais.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px;">Nenhum cupom cadastrado</td></tr>';
-        return;
-      }
-
-      tbody.innerHTML = cupomsGlobais.map(cupom => {
-        const hoje = new Date().toISOString().split("T")[0];
-        const expirado = cupom.expiracao < hoje;
-
-        return `
-          <tr>
-            <td><strong>${cupom.codigo}</strong></td>
-            <td>${cupom.loja}</td>
-            <td>${cupom.tipo === 'percentual' ? cupom.valor + '%' : cupom.tipo === 'fixo' ? 'R$ ' + cupom.valor : 'Frete'}</td>
-            <td>${cupom.descricao}</td>
-            <td>R$ ${parseFloat(cupom.minimo || 0).toFixed(2).replace(".", ",")}</td>
-            <td>${cupom.expiracao}</td>
-            <td><span class="status-badge ${expirado ? 'inactive' : 'active'}"><span class="status-dot"></span>${expirado ? 'Expirado' : 'Ativo'}</span></td>
-            <td>
-              <button class="btn-icon" onclick="deletarCupom('${cupom.id}')" title="Deletar">
-                <i class="fas fa-trash"></i>
-              </button>
-            </td>
-          </tr>
-        `;
-      }).join("");
-    }
-
-    function atualizarTabelaCategorias() {
-      const container = document.getElementById("categoriasLista");
-      container.innerHTML = categoriasGlobais.map(cat => `
-        <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #e0e0e0;">
-          <i class="fas fa-tag" style="font-size: 32px; color: #8b5cf6; margin-bottom: 10px; display: block;"></i>
-          <h4>${cat}</h4>
-          <p style="color: #999; font-size: 12px; margin-top: 8px;">${produtosGlobais.filter(p => p.categoria === cat).length} produtos</p>
-        </div>
-      `).join("");
-    }
-
-    // ==================== ATUALIZAR MÉTRICAS ====================
-    function atualizarMetricas() {
-      document.getElementById("totalProdutos").innerText = produtosGlobais.length;
-      document.getElementById("totalLojas").innerText = (lojasGlobais.length || LOJAS.length);
-      document.getElementById("totalCupons").innerText = cupomsGlobais.length;
-      document.getElementById("totalCategorias").innerText = categoriasGlobais.length;
-
-      document.getElementById("produtosPercent").innerText = Math.floor(Math.random() * 20 + 5) + "%";
-      document.getElementById("lojasPercent").innerText = Math.floor(Math.random() * 20 + 2) + "%";
-      document.getElementById("cuponsPercent").innerText = Math.floor(Math.random() * 30 + 5) + "%";
-      document.getElementById("categoriasPercent").innerText = Math.floor(Math.random() * 10 + 1) + "%";
-    }
-
-    // ==================== PRODUTOS - CRUD ====================
-    function abrirModalProduto() {
-      document.getElementById("produtoModalTitulo").innerText = "Novo Produto";
-      document.getElementById("produtoForm").reset();
-      limparErros(["nomeError", "categoriaError", "lojaError", "precoOriginalError", "precoVendaError", "linkError", "imgError"]);
-      document.getElementById("produtoModal").classList.add("show");
-    }
-
-    function fecharModalProduto() {
-      document.getElementById("produtoModal").classList.remove("show");
-    }
-
-    function salvarProduto(event) {
-      event.preventDefault();
-
-      const nome = document.getElementById("produtoNome").value.trim();
-      const categoria = document.getElementById("produtoCategoria").value;
-      const loja = document.getElementById("produtoLoja").value;
-      const precoOriginal = document.getElementById("produtoPrecoOriginal").value;
-      const precoVenda = document.getElementById("produtoPrecoVenda").value;
-      const link = document.getElementById("produtoLink").value.trim();
-      const img = document.getElementById("produtoImg").value.trim();
-      const status = document.getElementById("produtoStatus").value;
-
-      limparErros(["nomeError", "categoriaError", "lojaError", "precoOriginalError", "precoVendaError", "linkError", "imgError"]);
-
-      let temErro = false;
-
-      if (!nome) {
-        mostrarErro("Nome é obrigatório", "nomeError");
-        temErro = true;
-      }
-
-      if (!categoria) {
-        mostrarErro("Categoria é obrigatória", "categoriaError");
-        temErro = true;
-      }
-
-      if (!loja) {
-        mostrarErro("Loja é obrigatória", "lojaError");
-        temErro = true;
-      }
-
-      if (!precoOriginal || parseFloat(precoOriginal) <= 0) {
-        mostrarErro("Preço original deve ser maior que 0", "precoOriginalError");
-        temErro = true;
-      }
-
-      if (!precoVenda || parseFloat(precoVenda) <= 0) {
-        mostrarErro("Preço de venda deve ser maior que 0", "precoVendaError");
-        temErro = true;
-      }
-
-      if (!link || !link.startsWith("http")) {
-        mostrarErro("Link deve ser uma URL válida", "linkError");
-        temErro = true;
-      }
-
-      if (!img || !img.startsWith("http")) {
-        mostrarErro("URL da imagem deve ser válida", "imgError");
-        temErro = true;
-      }
-
-      if (temErro) return;
-
-      const dados = {
-        nome,
-        categoria,
-        loja,
-        precoOriginal: parseFloat(precoOriginal),
-        precoVenda: parseFloat(precoVenda),
-        link,
-        img,
-        status,
-        createdAt: new Date()
-      };
-
-      db.collection("produtos").add(dados)
-        .then(() => {
-          alert("Produto salvo com sucesso!");
-          fecharModalProduto();
-        })
-        .catch(erro => alert("Erro ao salvar produto: " + erro.message));
-    }
-
-    function editarProduto(id) {
-      const prod = produtosGlobais.find(p => p.id === id);
-      if (!prod) return;
-
-      document.getElementById("produtoModalTitulo").innerText = "Editar Produto";
-      document.getElementById("produtoNome").value = prod.nome;
-      document.getElementById("produtoCategoria").value = prod.categoria;
-      document.getElementById("produtoLoja").value = prod.loja;
-      document.getElementById("produtoPrecoOriginal").value = prod.precoOriginal;
-      document.getElementById("produtoPrecoVenda").value = prod.precoVenda;
-      document.getElementById("produtoLink").value = prod.link;
-      document.getElementById("produtoImg").value = prod.img;
-      document.getElementById("produtoStatus").value = prod.status;
-
-      document.getElementById("produtoForm").onsubmit = (e) => {
-        e.preventDefault();
-        atualizarProduto(id);
-      };
-
-      document.getElementById("produtoModal").classList.add("show");
-    }
-
-    function atualizarProduto(id) {
-      const nome = document.getElementById("produtoNome").value.trim();
-      const categoria = document.getElementById("produtoCategoria").value;
-      const loja = document.getElementById("produtoLoja").value;
-      const precoOriginal = document.getElementById("produtoPrecoOriginal").value;
-      const precoVenda = document.getElementById("produtoPrecoVenda").value;
-      const link = document.getElementById("produtoLink").value.trim();
-      const img = document.getElementById("produtoImg").value.trim();
-      const status = document.getElementById("produtoStatus").value;
-
-      db.collection("produtos").doc(id).update({
-        nome,
-        categoria,
-        loja,
-        precoOriginal: parseFloat(precoOriginal),
-        precoVenda: parseFloat(precoVenda),
-        link,
-        img,
-        status
-      })
-        .then(() => {
-          alert("Produto atualizado com sucesso!");
-          fecharModalProduto();
-          document.getElementById("produtoForm").onsubmit = (e) => salvarProduto(e);
-        })
-        .catch(erro => alert("Erro ao atualizar: " + erro.message));
-    }
-
-    function deletarProduto(id) {
-      if (confirm("Tem certeza que deseja deletar este produto?")) {
-        db.collection("produtos").doc(id).delete()
-          .then(() => alert("Produto deletado com sucesso!"))
-          .catch(erro => alert("Erro ao deletar: " + erro.message));
-      }
-    }
-
-    // ==================== CUPONS - CRUD ====================
-    function abrirModalCupom() {
-      document.getElementById("cupomForm").reset();
-      document.getElementById("cupomModal").classList.add("show");
-      atualizarCamposDesconto();
-    }
-
-    function fecharModalCupom() {
-      document.getElementById("cupomModal").classList.remove("show");
-    }
-
-    function atualizarCamposDesconto() {
-      const tipo = document.getElementById("cupomTipo").value;
-      const grupoValor = document.getElementById("grupoValorDesconto");
-      const input = document.getElementById("cupomValor");
-
-      if (tipo === "frete") {
-        grupoValor.style.display = "none";
-        input.value = "0";
-      } else {
-        grupoValor.style.display = "block";
-        input.placeholder = tipo === "percentual" ? "Ex: 20" : "Ex: 15.00";
-      }
-    }
-
-    function salvarCupom(event) {
-      event.preventDefault();
-
-      const codigo = document.getElementById("cupomCodigo").value.trim().toUpperCase();
-      const loja = document.getElementById("cupomLoja").value;
-      const descricao = document.getElementById("cupomDescricao").value.trim();
-      const tipo = document.getElementById("cupomTipo").value;
-      const valor = document.getElementById("cupomValor").value;
-      const minimo = document.getElementById("cupomMinimo").value || "0";
-      const expiracao = document.getElementById("cupomExpiracao").value;
-
-      limparErros(["codigoError"]);
-
-      if (!codigo) {
-        mostrarErro("Código é obrigatório", "codigoError");
-        return;
-      }
-
-      if (cupomsGlobais.some(c => c.codigo === codigo)) {
-        mostrarErro("Código já existe", "codigoError");
-        return;
-      }
-
-      const dados = {
-        codigo,
-        loja,
-        descricao,
-        tipo,
-        valor: tipo === "frete" ? 0 : parseFloat(valor),
-        minimo: parseFloat(minimo),
-        expiracao,
-        criadoEm: new Date()
-      };
-
-      db.collection("cupons").add(dados)
-        .then(() => {
-          alert("Cupom salvo com sucesso!");
-          fecharModalCupom();
-        })
-        .catch(erro => alert("Erro ao salvar cupom: " + erro.message));
-    }
-
-    function deletarCupom(id) {
-      if (confirm("Tem certeza que deseja deletar este cupom?")) {
-        db.collection("cupons").doc(id).delete()
-          .then(() => alert("Cupom deletado com sucesso!"))
-          .catch(erro => alert("Erro ao deletar: " + erro.message));
-      }
     }
 
     // ==================== NAVEGAÇÃO ====================
@@ -1896,68 +1470,520 @@
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
       event.target.closest('.nav-item').classList.add('active');
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (page === 'produtos') {
+        loadProdutos();
+      } else if (page === 'categorias') {
+        loadCategorias();
+      } else if (page === 'lojas') {
+        loadLojas();
+      } else if (page === 'cupons') {
+        loadCupons();
+      } else if (page === 'dashboard') {
+        updateDashboard();
+      }
     }
 
     function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("collapsed");
+      document.getElementById('sidebar').classList.toggle('collapsed');
     }
 
-    // ==================== FILTROS ====================
-    function filterTabela() {
-      const searchTerm = document.getElementById("globalSearch").value.toLowerCase();
-      const rows = document.querySelectorAll("#produtosCorpo tr");
+    // ==================== DASHBOARD ====================
+    function updateDashboard() {
+      db.collection('produtos').where('status', '==', 'Ativo').get().then(snap => {
+        document.getElementById('metricProdutos').innerText = snap.size;
+      });
 
-      rows.forEach(row => {
-        const texto = row.textContent.toLowerCase();
-        row.style.display = texto.includes(searchTerm) ? "" : "none";
+      db.collection('lojas').where('status', '==', 'Ativa').get().then(snap => {
+        document.getElementById('metricLojas').innerText = snap.size;
+        document.getElementById('metricLojasPercent').innerText = snap.size > 0 ? '100' : '0';
+      });
+
+      document.getElementById('metricPedidos').innerText = '1.248';
+      document.getElementById('metricPedidosPercent').innerText = '12,5';
+      document.getElementById('metricReceita').innerText = 'R$ 24.580,90';
+      document.getElementById('metricReceitaPercent').innerText = '18,3';
+    }
+
+    // ==================== PRODUTOS ====================
+    function loadProdutos() {
+      db.collection('produtos').onSnapshot(snap => {
+        allProdutos = [];
+        snap.forEach(doc => {
+          allProdutos.push({ id: doc.id, ...doc.data() });
+        });
+        populateCategoryFilter();
+        populateStoreFilter();
+        filterProdutos();
       });
     }
 
-    // ==================== CONFIGURAÇÕES ====================
-    function salvarConfiguracoes() {
-      const nome = document.getElementById("configNome").value;
-      const email = document.getElementById("configEmail").value;
-      const telefone = document.getElementById("configTelefone").value;
-      const endereco = document.getElementById("configEndereco").value;
+    function filterProdutos() {
+      let filtered = [...allProdutos];
+      const search = document.getElementById('searchProduto').value.toLowerCase();
+      const categoria = document.getElementById('categoriaProduto').value;
+      const loja = document.getElementById('lojaProduto').value;
+      const status = document.getElementById('statusProduto').value;
 
-      localStorage.setItem("configLoja", JSON.stringify({ nome, email, telefone, endereco }));
-      alert("Configurações salvas com sucesso!");
+      if (search) filtered = filtered.filter(p => p.nome.toLowerCase().includes(search));
+      if (categoria) filtered = filtered.filter(p => p.categoria === categoria);
+      if (loja) filtered = filtered.filter(p => p.loja === loja);
+      if (status) filtered = filtered.filter(p => p.status === status);
+
+      renderProdutosTable(filtered);
+      document.getElementById('paginationInfo').innerText = `Mostrando ${Math.min(itemsPerPage, filtered.length)} de ${filtered.length} produtos`;
     }
 
-    // ==================== UTILITÁRIOS ====================
-    function mostrarErro(mensagem, elementId) {
-      const elemento = document.getElementById(elementId);
-      if (elemento) {
-        elemento.textContent = mensagem;
-        elemento.style.display = "block";
+    function renderProdutosTable(produtos) {
+      const tbody = document.getElementById('produtosTableBody');
+      
+      if (produtos.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="empty-state">Nenhum produto encontrado</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = produtos.map(p => `
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>
+            <div class="product-cell">
+              <img src="${p.img}" class="product-image" style="width: 50px; height: 50px; object-fit: contain;">
+              <div class="product-info">
+                <h4>${p.nome}</h4>
+                <p>ID: #${p.id.substring(0, 8)}</p>
+              </div>
+            </div>
+          </td>
+          <td><span class="badge badge-primary">${p.categoria}</span></td>
+          <td>${p.loja}</td>
+          <td>
+            <span class="price-original">R$ ${p.precoAntigo}</span>
+            <strong>R$ ${p.precoNovo}</strong>
+          </td>
+          <td>
+            <span class="status-badge ${p.status === 'Ativo' ? 'active' : 'inactive'}">
+              <span class="status-dot"></span>
+              ${p.status}
+            </span>
+          </td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-icon" title="Editar" onclick="editProduct('${p.id}')"><i class="fas fa-edit"></i></button>
+              <button class="btn-icon" title="Deletar" onclick="deleteProduct('${p.id}')"><i class="fas fa-trash"></i></button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function populateCategoryFilter() {
+      db.collection('categorias').get().then(snap => {
+        const select = document.getElementById('categoriaProduto');
+        const productSelect = document.getElementById('produtoCategoria');
+        let html = '<option value="">Todas Categorias</option>';
+        let productHtml = '<option value="">Selecione</option>';
+        
+        snap.forEach(doc => {
+          const nome = doc.data().nome;
+          html += `<option value="${nome}">${nome}</option>`;
+          productHtml += `<option value="${nome}">${nome}</option>`;
+        });
+        
+        select.innerHTML = html;
+        productSelect.innerHTML = productHtml;
+      });
+    }
+
+    function populateStoreFilter() {
+      db.collection('lojas').get().then(snap => {
+        const select = document.getElementById('lojaProduto');
+        const productSelect = document.getElementById('produtoLoja');
+        let html = '<option value="">Todas Lojas</option>';
+        let productHtml = '<option value="">Selecione</option>';
+        
+        snap.forEach(doc => {
+          const nome = doc.data().nome;
+          html += `<option value="${nome}">${nome}</option>`;
+          productHtml += `<option value="${nome}">${nome}</option>`;
+        });
+        
+        select.innerHTML = html;
+        productSelect.innerHTML = productHtml;
+      });
+    }
+
+    function updateSubcategories() {
+      const categoria = document.getElementById('produtoCategoria').value;
+      const subDiv = document.getElementById('subcategoriaGroup');
+      const subSelect = document.getElementById('produtoSubcategoria');
+
+      if (SUBCATEGORIAS[categoria] && SUBCATEGORIAS[categoria].length > 0) {
+        subDiv.style.display = 'block';
+        subSelect.innerHTML = '<option value="">Selecione</option>' + 
+          SUBCATEGORIAS[categoria].map(s => `<option value="${s}">${s}</option>`).join('');
+      } else {
+        subDiv.style.display = 'none';
+        subSelect.innerHTML = '<option value="">Selecione</option>';
       }
     }
 
-    function limparErros(ids) {
-      ids.forEach(id => {
-        const elemento = document.getElementById(id);
-        if (elemento) {
-          elemento.textContent = "";
-          elemento.style.display = "none";
+    function openProductModal() {
+      editingProductId = null;
+      document.getElementById('productForm').reset();
+      document.getElementById('productModal').classList.add('show');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('show');
+      editingProductId = null;
+    }
+
+    function editProduct(id) {
+      const produto = allProdutos.find(p => p.id === id);
+      if (!produto) return;
+
+      editingProductId = id;
+      document.getElementById('produtoNome').value = produto.nome;
+      document.getElementById('produtoCategoria').value = produto.categoria;
+      updateSubcategories();
+      if (produto.subcategoria) {
+        document.getElementById('produtoSubcategoria').value = produto.subcategoria;
+      }
+      document.getElementById('produtoLoja').value = produto.loja;
+      document.getElementById('produtoImg').value = produto.img;
+      document.getElementById('produtoPrecoAntigo').value = produto.precoAntigo;
+      document.getElementById('produtoPrecoNovo').value = produto.precoNovo;
+      document.getElementById('produtoLink').value = produto.link;
+      document.getElementById('produtoStatus').value = produto.status;
+
+      document.querySelector('.modal-title').innerText = 'Editar Produto';
+      document.querySelector('.modal-title').innerHTML = 'Editar Produto';
+      document.getElementById('productModal').classList.add('show');
+    }
+
+    function saveProduct(e) {
+      e.preventDefault();
+
+      const produto = {
+        nome: document.getElementById('produtoNome').value,
+        categoria: document.getElementById('produtoCategoria').value,
+        subcategoria: document.getElementById('produtoSubcategoria').value || null,
+        loja: document.getElementById('produtoLoja').value,
+        img: document.getElementById('produtoImg').value,
+        precoAntigo: document.getElementById('produtoPrecoAntigo').value,
+        precoNovo: document.getElementById('produtoPrecoNovo').value,
+        link: document.getElementById('produtoLink').value,
+        status: document.getElementById('produtoStatus').value,
+        createdAt: new Date()
+      };
+
+      if (editingProductId) {
+        db.collection('produtos').doc(editingProductId).update(produto).then(() => {
+          alert('✅ Produto atualizado com sucesso!');
+          closeProductModal();
+          loadProdutos();
+        }).catch(err => alert('❌ Erro: ' + err.message));
+      } else {
+        db.collection('produtos').add(produto).then(() => {
+          alert('✅ Produto criado com sucesso!');
+          closeProductModal();
+          loadProdutos();
+        }).catch(err => alert('❌ Erro: ' + err.message));
+      }
+    }
+
+    function deleteProduct(id) {
+      if (!confirm('Tem certeza que deseja deletar este produto?')) return;
+      
+      db.collection('produtos').doc(id).delete().then(() => {
+        alert('✅ Produto deletado com sucesso!');
+        loadProdutos();
+      }).catch(err => alert('❌ Erro: ' + err.message));
+    }
+
+    // ==================== CATEGORIAS ====================
+    function loadCategorias() {
+      db.collection('categorias').onSnapshot(snap => {
+        allCategorias = [];
+        const tbody = document.getElementById('categoriasTableBody');
+        tbody.innerHTML = '';
+
+        snap.forEach(doc => {
+          allCategorias.push({ id: doc.id, ...doc.data() });
+        });
+
+        if (allCategorias.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="3" class="empty-state">Nenhuma categoria criada</td></tr>';
+          return;
         }
+
+        allCategorias.forEach(cat => {
+          const prodCount = allProdutos.filter(p => p.categoria === cat.nome).length;
+          tbody.innerHTML += `
+            <tr>
+              <td>${cat.nome}</td>
+              <td>${prodCount} produtos</td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-icon" title="Deletar" onclick="deleteCategory('${cat.id}')"><i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+          `;
+        });
       });
     }
 
-    function mostrarModalCadastro() {
-      document.getElementById("cadastroModal").classList.add("show");
+    function openCategoryModal() {
+      document.getElementById('categoryForm').reset();
+      document.getElementById('categoryModal').classList.add('show');
     }
 
-    function fecharModalCadastro() {
-      document.getElementById("cadastroModal").classList.remove("show");
+    function closeCategoryModal() {
+      document.getElementById('categoryModal').classList.remove('show');
     }
 
-    // Fechar modais ao clicar fora
-    document.addEventListener("click", (e) => {
-      if (e.target.classList.contains("modal")) {
-        e.target.classList.remove("show");
+    function saveCategory(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('categoryNome').value.trim();
+      if (!nome) return alert('⚠️ Digite o nome da categoria');
+
+      db.collection('categorias').add({ nome, createdAt: new Date() })
+        .then(() => {
+          alert('✅ Categoria criada com sucesso!');
+          closeCategoryModal();
+          loadCategorias();
+        })
+        .catch(err => alert('❌ Erro: ' + err.message));
+    }
+
+    function deleteCategory(id) {
+      if (!confirm('Tem certeza que deseja deletar esta categoria?')) return;
+      
+      db.collection('categorias').doc(id).delete()
+        .then(() => {
+          alert('✅ Categoria deletada com sucesso!');
+          loadCategorias();
+        })
+        .catch(err => alert('❌ Erro: ' + err.message));
+    }
+
+    // ==================== LOJAS ====================
+    function loadLojas() {
+      db.collection('lojas').onSnapshot(snap => {
+        allLojas = [];
+        const tbody = document.getElementById('lojasTableBody');
+        tbody.innerHTML = '';
+
+        snap.forEach(doc => {
+          allLojas.push({ id: doc.id, ...doc.data() });
+        });
+
+        if (allLojas.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Nenhuma loja criada</td></tr>';
+          return;
+        }
+
+        allLojas.forEach(loja => {
+          tbody.innerHTML += `
+            <tr>
+              <td>${loja.nome}</td>
+              <td><span class="badge badge-primary">${loja.tipo}</span></td>
+              <td>${loja.local || '-'}</td>
+              <td>
+                <span class="status-badge ${loja.status === 'Ativa' ? 'active' : 'inactive'}">
+                  <span class="status-dot"></span>
+                  ${loja.status}
+                </span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-icon" title="Editar" onclick="editStore('${loja.id}')"><i class="fas fa-edit"></i></button>
+                  <button class="btn-icon" title="Deletar" onclick="deleteStore('${loja.id}')"><i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+          `;
+        });
+
+        populateCouponStoreFilter();
+      });
+    }
+
+    function openStoreModal() {
+      document.getElementById('storeForm').reset();
+      document.getElementById('storeModal').classList.add('show');
+    }
+
+    function closeStoreModal() {
+      document.getElementById('storeModal').classList.remove('show');
+    }
+
+    function editStore(id) {
+      const loja = allLojas.find(l => l.id === id);
+      if (!loja) return;
+
+      document.getElementById('storeNome').value = loja.nome;
+      document.getElementById('storeTipo').value = loja.tipo;
+      document.getElementById('storeLocal').value = loja.local || '';
+      document.getElementById('storeStatus').value = loja.status;
+      
+      // Salva o ID no dataset para saber que é edição
+      document.getElementById('storeForm').dataset.editId = id;
+      document.querySelector('#storeModal .modal-title').innerText = 'Editar Loja';
+      document.getElementById('storeModal').classList.add('show');
+    }
+
+    function saveStore(e) {
+      e.preventDefault();
+
+      const editId = document.getElementById('storeForm').dataset.editId;
+      const loja = {
+        nome: document.getElementById('storeNome').value,
+        tipo: document.getElementById('storeTipo').value,
+        local: document.getElementById('storeLocal').value,
+        status: document.getElementById('storeStatus').value,
+        createdAt: new Date()
+      };
+
+      if (editId) {
+        db.collection('lojas').doc(editId).update(loja).then(() => {
+          alert('✅ Loja atualizada com sucesso!');
+          document.getElementById('storeForm').dataset.editId = '';
+          document.querySelector('#storeModal .modal-title').innerText = 'Nova Loja';
+          closeStoreModal();
+          loadLojas();
+        }).catch(err => alert('❌ Erro: ' + err.message));
+      } else {
+        db.collection('lojas').add(loja).then(() => {
+          alert('✅ Loja criada com sucesso!');
+          closeStoreModal();
+          loadLojas();
+        }).catch(err => alert('❌ Erro: ' + err.message));
       }
-    });
+    }
+
+    function deleteStore(id) {
+      if (!confirm('Tem certeza que deseja deletar esta loja?')) return;
+      
+      db.collection('lojas').doc(id).delete()
+        .then(() => {
+          alert('✅ Loja deletada com sucesso!');
+          loadLojas();
+        })
+        .catch(err => alert('❌ Erro: ' + err.message));
+    }
+
+    // ==================== CUPONS ====================
+    function loadCupons() {
+      db.collection('cupons').onSnapshot(snap => {
+        allCupons = [];
+        const tbody = document.getElementById('cupomsTableBody');
+        tbody.innerHTML = '';
+
+        snap.forEach(doc => {
+          allCupons.push({ id: doc.id, ...doc.data() });
+        });
+
+        if (allCupons.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" class="empty-state">Nenhum cupom criado</td></tr>';
+          return;
+        }
+
+        allCupons.forEach(cupom => {
+          const hoje = new Date().toISOString().split('T')[0];
+          const expirado = cupom.expiracao < hoje;
+          tbody.innerHTML += `
+            <tr>
+              <td><strong>${cupom.codigo}</strong></td>
+              <td>${cupom.descricao}</td>
+              <td>${cupom.desconto}</td>
+              <td>${cupom.expiracao}</td>
+              <td>
+                <span class="status-badge ${!expirado ? 'active' : 'inactive'}">
+                  <span class="status-dot"></span>
+                  ${!expirado ? 'Ativo' : 'Expirado'}
+                </span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="btn-icon" title="Deletar" onclick="deleteCoupon('${cupom.id}')"><i class="fas fa-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+          `;
+        });
+      });
+    }
+
+    function populateCouponStoreFilter() {
+      const select = document.getElementById('couponLoja');
+      let html = '<option value="">Selecione</option>';
+      
+      allLojas.forEach(loja => {
+        html += `<option value="${loja.nome}">${loja.nome}</option>`;
+      });
+      
+      select.innerHTML = html;
+    }
+
+    function openCouponModal() {
+      document.getElementById('couponForm').reset();
+      document.getElementById('couponModal').classList.add('show');
+    }
+
+    function closeCouponModal() {
+      document.getElementById('couponModal').classList.remove('show');
+    }
+
+    function saveCoupon(e) {
+      e.preventDefault();
+
+      const cupom = {
+        codigo: document.getElementById('couponCodigo').value.toUpperCase(),
+        descricao: document.getElementById('couponDescricao').value,
+        loja: document.getElementById('couponLoja').value,
+        desconto: document.getElementById('couponDesconto').value,
+        expiracao: document.getElementById('couponExpiracao').value,
+        createdAt: new Date()
+      };
+
+      db.collection('cupons').add(cupom)
+        .then(() => {
+          alert('✅ Cupom criado com sucesso!');
+          closeCouponModal();
+          loadCupons();
+        })
+        .catch(err => alert('❌ Erro: ' + err.message));
+    }
+
+    function deleteCoupon(id) {
+      if (!confirm('Tem certeza que deseja deletar este cupom?')) return;
+      
+      db.collection('cupons').doc(id).delete()
+        .then(() => {
+          alert('✅ Cupom deletado com sucesso!');
+          loadCupons();
+        })
+        .catch(err => alert('❌ Erro: ' + err.message));
+    }
+
+    // ==================== BUSCA GLOBAL ====================
+    function handleGlobalSearch() {
+      const term = document.getElementById('globalSearch').value.toLowerCase();
+      if (!term) {
+        loadProdutos();
+        return;
+      }
+
+      const filtered = allProdutos.filter(p => 
+        p.nome.toLowerCase().includes(term) ||
+        p.categoria.toLowerCase().includes(term) ||
+        p.loja.toLowerCase().includes(term)
+      );
+
+      renderProdutosTable(filtered);
+    }
   </script>
 </body>
 </html>
