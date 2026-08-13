@@ -53,11 +53,6 @@
       justify-content: center;
     }
 
-    .sidebar-header img {
-      width: 35px;
-      height: 35px;
-    }
-
     .user-section {
       display: flex;
       align-items: center;
@@ -184,6 +179,26 @@
       background: rgba(139, 92, 246, 0.2);
     }
 
+    .logout-btn {
+      margin-top: auto;
+      padding: 10px 15px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background: #dc2626;
+    }
+
     /* ============ MAIN CONTENT ============ */
     .main-content {
       flex: 1;
@@ -235,55 +250,6 @@
       gap: 20px;
     }
 
-    .notification-icon {
-      position: relative;
-      cursor: pointer;
-      font-size: 20px;
-      color: #666;
-    }
-
-    .notification-badge {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background: #ef4444;
-      color: white;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .admin-menu {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .admin-menu:hover {
-      background: #f5f5f5;
-    }
-
-    .admin-avatar {
-      width: 35px;
-      height: 35px;
-      background: #8b5cf6;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 16px;
-    }
-
     /* ============ DASHBOARD ============ */
     .page-title {
       font-size: 28px;
@@ -312,22 +278,6 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
       position: relative;
       overflow: hidden;
-    }
-
-    .metric-card .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #ccc;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .metric-card .close-btn:hover {
-      color: #999;
     }
 
     .metric-header {
@@ -378,102 +328,13 @@
       color: #ef4444;
     }
 
-    .metric-comparison {
-      font-size: 12px;
-      color: #999;
-      margin-top: 8px;
-    }
-
-    .metric-chart {
-      margin-top: 16px;
-      height: 40px;
-      background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
-      border-radius: 4px;
-    }
-
-    /* ============ ALERTS ============ */
-    .alerts-container {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .alert {
-      background: white;
-      padding: 16px 20px;
-      border-radius: 8px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .alert-success {
-      border-left: 4px solid #10b981;
-    }
-
-    .alert-warning {
-      border-left: 4px solid #f59e0b;
-    }
-
-    .alert-error {
-      border-left: 4px solid #ef4444;
-    }
-
-    .alert-icon {
-      font-size: 20px;
-      margin-top: 2px;
-    }
-
-    .alert-success .alert-icon { color: #10b981; }
-    .alert-warning .alert-icon { color: #f59e0b; }
-    .alert-error .alert-icon { color: #ef4444; }
-
-    .alert-content {
-      flex: 1;
-    }
-
-    .alert-title {
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 4px;
-      color: #1a1a1a;
-    }
-
-    .alert-message {
-      font-size: 13px;
-      color: #666;
-    }
-
-    .alert-link {
-      color: #8b5cf6;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .alert-close {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #ccc;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .alert-close:hover {
-      color: #999;
-    }
-
-    /* ============ PRODUTOS SECTION ============ */
+    /* ============ SECTION ============ */
     .section {
       background: white;
       border-radius: 12px;
       padding: 30px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
     }
 
     .section-header {
@@ -522,18 +383,21 @@
       background: #d0d0d0;
     }
 
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #dc2626;
+    }
+
     /* ============ FILTERS ============ */
     .filters-container {
       display: flex;
       gap: 12px;
       margin-bottom: 24px;
       flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .filter-group {
-      display: flex;
-      gap: 8px;
       align-items: center;
     }
 
@@ -555,27 +419,6 @@
       outline: none;
       border-color: #8b5cf6;
       box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-    }
-
-    .filter-icon {
-      color: #666;
-      font-size: 16px;
-    }
-
-    .filter-text {
-      font-size: 13px;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .sort-select {
-      padding: 8px 12px;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      font-size: 13px;
-      background: white;
-      cursor: pointer;
-      margin-left: auto;
     }
 
     /* ============ TABLE ============ */
@@ -630,6 +473,7 @@
       justify-content: center;
       color: #999;
       font-size: 24px;
+      object-fit: cover;
     }
 
     .product-info h4 {
@@ -665,39 +509,6 @@
     .badge-danger {
       background: #fee2e2;
       color: #991b1b;
-    }
-
-    .price-original {
-      text-decoration: line-through;
-      color: #999;
-      margin-right: 8px;
-    }
-
-    .stock-status {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .stock-status.low {
-      color: #f59e0b;
-    }
-
-    .stock-status.normal {
-      color: #10b981;
-    }
-
-    .rating {
-      color: #fbbf24;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .rating-number {
-      color: #666;
-      font-size: 12px;
-      margin-left: 4px;
     }
 
     .status-badge {
@@ -788,11 +599,6 @@
       border-color: #8b5cf6;
     }
 
-    .pagination-text {
-      font-size: 13px;
-      color: #666;
-    }
-
     /* ============ MODAL ============ */
     .modal {
       display: none;
@@ -815,9 +621,11 @@
       background: white;
       border-radius: 12px;
       padding: 30px;
-      max-width: 500px;
+      max-width: 600px;
       width: 90%;
       box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+      max-height: 90vh;
+      overflow-y: auto;
     }
 
     .modal-header {
@@ -860,6 +668,11 @@
       font-size: 14px;
     }
 
+    .form-label.required::after {
+      content: " *";
+      color: #ef4444;
+    }
+
     .form-input,
     .form-select,
     .form-textarea {
@@ -880,6 +693,18 @@
       box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
     }
 
+    .form-input.error,
+    .form-select.error,
+    .form-textarea.error {
+      border-color: #ef4444;
+    }
+
+    .error-message {
+      color: #ef4444;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
     .form-actions {
       display: flex;
       gap: 12px;
@@ -890,13 +715,72 @@
       flex: 1;
     }
 
-    /* ============ HIDDEN SECTIONS ============ */
+    /* ============ CONTENT SECTIONS ============ */
     .content-section {
       display: none;
     }
 
     .content-section.active {
       display: block;
+    }
+
+    /* ============ LOGIN PAGE ============ */
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 100%);
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .login-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    .login-header div {
+      font-size: 24px;
+    }
+
+    .login-header h1 {
+      font-size: 20px;
+      color: #1a1a1a;
+    }
+
+    .login-box .form-group {
+      margin-bottom: 16px;
+    }
+
+    .login-box .btn {
+      width: 100%;
+    }
+
+    /* ============ LOADING ============ */
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #8b5cf6;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     /* ============ RESPONSIVE ============ */
@@ -914,33 +798,6 @@
         grid-template-columns: 1fr;
       }
 
-      .alerts-container {
-        flex-direction: column;
-      }
-
-      .alert {
-        min-width: 100%;
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .filters-container {
-        flex-direction: column;
-      }
-
-      .filter-select {
-        width: 100%;
-      }
-
-      .sort-select {
-        width: 100%;
-        margin-left: 0;
-      }
-
       .header {
         flex-direction: column;
       }
@@ -952,7 +809,46 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <div style="font-size: 24px;">🚀</div>
+        <div>
+          <h1>Pippit AI</h1>
+        </div>
+      </div>
+
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label required">Email</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="seu@email.com" required>
+          <div class="error-message" id="emailError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Senha</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+          <div class="error-message" id="passwordError"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 12px;">
+          <i class="fas fa-sign-in-alt"></i>
+          Entrar
+        </button>
+      </form>
+
+      <button type="button" class="btn btn-secondary" style="width: 100%;" onclick="mostrarModalCadastro()">
+        <i class="fas fa-user-plus"></i>
+        Criar Conta
+      </button>
+
+      <div id="loginError" style="color: #ef4444; text-align: center; margin-top: 16px; display: none;"></div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="mainApp" class="container" style="display: none;">
     <!-- SIDEBAR -->
     <div class="sidebar" id="sidebar">
       <div class="sidebar-header">
@@ -963,7 +859,7 @@
       <div class="user-section">
         <div class="user-avatar">👤</div>
         <div class="user-info">
-          <div class="user-name">Administrator</div>
+          <div class="user-name" id="adminName">Administrator</div>
           <div class="user-status">
             <span class="online"></span>Online
           </div>
@@ -991,18 +887,6 @@
         <i class="fas fa-ticket-alt"></i>
         <span>Cupons</span>
       </a>
-      <a class="nav-item" onclick="showPage('pedidos')">
-        <i class="fas fa-shopping-cart"></i>
-        <span>Pedidos</span>
-      </a>
-      <a class="nav-item" onclick="showPage('clientes')">
-        <i class="fas fa-users"></i>
-        <span>Clientes</span>
-      </a>
-      <a class="nav-item" onclick="showPage('avaliacoes')">
-        <i class="fas fa-star"></i>
-        <span>Avaliações</span>
-      </a>
       <a class="nav-item" onclick="showPage('configuracoes')">
         <i class="fas fa-cog"></i>
         <span>Configurações</span>
@@ -1010,7 +894,12 @@
 
       <button class="collapse-btn" onclick="toggleSidebar()">
         <i class="fas fa-arrow-left"></i>
-        <span>Recolher menu</span>
+        <span>Recolher</span>
+      </button>
+
+      <button class="logout-btn" onclick="handleLogout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Sair</span>
       </button>
     </div>
 
@@ -1019,75 +908,78 @@
       <!-- HEADER -->
       <div class="header">
         <div class="search-bar">
-          <input type="text" placeholder="Pesquisar produtos, pedidos, clientes..." id="globalSearch">
-        </div>
-        <div class="header-right">
-          <div class="notification-icon">
-            <i class="fas fa-bell"></i>
-            <div class="notification-badge">1</div>
-          </div>
-          <div class="admin-menu">
-            <div class="admin-avatar">👤</div>
-            <span>Administrator</span>
-            <i class="fas fa-chevron-down" style="font-size: 12px;"></i>
-          </div>
+          <input type="text" placeholder="Pesquisar..." id="globalSearch" onkeyup="filterTabela()">
         </div>
       </div>
 
       <!-- ============ DASHBOARD ============ -->
       <div id="dashboard" class="content-section active">
         <h1 class="page-title">Dashboard</h1>
-        <p class="page-subtitle">Visão geral da sua loja</p>
+        <p class="page-subtitle">Visão geral do seu negócio</p>
 
         <div class="metrics-grid" id="metricsGrid">
-          <!-- Preenchido por JavaScript -->
-        </div>
-
-        <div class="alerts-container" id="alertsContainer">
-          <!-- Preenchido por JavaScript -->
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-          <div class="section" style="min-height: 250px;">
-            <h3 style="margin-bottom: 20px; font-weight: 600;">Vendas últimos 7 dias</h3>
-            <div style="display: flex; align-items: flex-end; height: 150px; gap: 8px; padding: 0 10px;">
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 60%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 75%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 90%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 70%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 85%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 65%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #8b5cf6 0%, #c4b5fd 100%); height: 95%; border-radius: 6px;"></div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <div>
+                <div class="metric-title">Total de Produtos</div>
+                <div class="metric-value" id="totalProdutos">0</div>
+                <div class="metric-change">
+                  <i class="fas fa-arrow-up"></i>
+                  <span id="produtosPercent">0%</span>
+                </div>
+              </div>
+              <div class="metric-icon purple">
+                <i class="fas fa-box"></i>
+              </div>
             </div>
-            <p style="text-align: center; margin-top: 16px; font-weight: 600;">R$ 7.890,50 <span style="color: #10b981; font-size: 12px; margin-left: 8px;">↑ 15,6%</span></p>
           </div>
 
-          <div class="section" style="min-height: 250px;">
-            <h3 style="margin-bottom: 20px; font-weight: 600;">Pedidos últimos 7 dias</h3>
-            <div style="display: flex; align-items: flex-end; height: 150px; gap: 8px; padding: 0 10px;">
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 55%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 70%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 85%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 65%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 80%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 60%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%); height: 90%; border-radius: 6px;"></div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <div>
+                <div class="metric-title">Lojas Ativas</div>
+                <div class="metric-value" id="totalLojas">0</div>
+                <div class="metric-change">
+                  <i class="fas fa-arrow-up"></i>
+                  <span id="lojasPercent">0%</span>
+                </div>
+              </div>
+              <div class="metric-icon green">
+                <i class="fas fa-store"></i>
+              </div>
             </div>
-            <p style="text-align: center; margin-top: 16px; font-weight: 600;">342 <span style="color: #10b981; font-size: 12px; margin-left: 8px;">↑ 8,7%</span></p>
           </div>
 
-          <div class="section" style="min-height: 250px;">
-            <h3 style="margin-bottom: 20px; font-weight: 600;">Produtos com estoque baixo</h3>
-            <div style="display: flex; align-items: flex-end; height: 150px; gap: 8px; padding: 0 10px;">
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 40%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 30%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 50%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 25%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 35%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 45%; border-radius: 6px;"></div>
-              <div style="flex: 1; background: linear-gradient(180deg, #ef4444 0%, #fca5a5 100%); height: 20%; border-radius: 6px;"></div>
+          <div class="metric-card">
+            <div class="metric-header">
+              <div>
+                <div class="metric-title">Cupons Ativos</div>
+                <div class="metric-value" id="totalCupons">0</div>
+                <div class="metric-change">
+                  <i class="fas fa-arrow-up"></i>
+                  <span id="cuponsPercent">0%</span>
+                </div>
+              </div>
+              <div class="metric-icon blue">
+                <i class="fas fa-ticket-alt"></i>
+              </div>
             </div>
-            <p style="text-align: center; margin-top: 16px; font-weight: 600;">5 <span style="color: #ef4444; font-size: 12px; margin-left: 8px;"><a href="#" onclick="showPage('produtos')" style="color: #ef4444;">Ver lista</a></span></p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-header">
+              <div>
+                <div class="metric-title">Categorias</div>
+                <div class="metric-value" id="totalCategorias">0</div>
+                <div class="metric-change">
+                  <i class="fas fa-arrow-up"></i>
+                  <span id="categoriasPercent">0%</span>
+                </div>
+              </div>
+              <div class="metric-icon orange">
+                <i class="fas fa-tags"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1096,9 +988,9 @@
       <div id="produtos" class="content-section">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
           <div>
-            <h1 class="page-title">Produtos Cadastrados</h1>
+            <h1 class="page-title">Produtos</h1>
           </div>
-          <button class="btn btn-primary" onclick="openProductModal()">
+          <button class="btn btn-primary" onclick="abrirModalProduto()">
             <i class="fas fa-plus"></i>
             Novo Produto
           </button>
@@ -1106,215 +998,897 @@
 
         <div class="section">
           <div class="filters-container">
-            <div class="filter-group">
-              <i class="fas fa-search filter-icon"></i>
-              <input type="text" placeholder="Pesquisar produto..." class="filter-select" id="searchProduto" onkeyup="filterProdutos()" style="border: 1px solid #e0e0e0; flex: 1;">
-            </div>
-            <select class="filter-select" id="categoriaProduto" onchange="filterProdutos()">
+            <input type="text" placeholder="Pesquisar produto..." class="filter-select" id="searchProduto" onkeyup="filterTabela()" style="flex: 1; max-width: 300px;">
+            <select class="filter-select" id="categoriaProdutoFilter" onchange="filterTabela()">
               <option value="">Todas Categorias</option>
-              <option value="Utilidades">Utilidades</option>
-              <option value="Beleza">Beleza</option>
-              <option value="Perfumaria">Perfumaria</option>
             </select>
-            <select class="filter-select" id="lojaProduto" onchange="filterProdutos()">
+            <select class="filter-select" id="lojaProdutoFilter" onchange="filterTabela()">
               <option value="">Todas Lojas</option>
-              <option value="Shopee">Shopee</option>
-              <option value="Casa Construção">Casa Construção</option>
-              <option value="Beleza">Beleza</option>
             </select>
-            <select class="filter-select" id="statusProduto" onchange="filterProdutos()">
+            <select class="filter-select" id="statusProdutoFilter" onchange="filterTabela()">
               <option value="">Todos Status</option>
               <option value="Ativo">Ativo</option>
               <option value="Inativo">Inativo</option>
             </select>
-            <div style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
-              <i class="fas fa-sliders-h filter-icon"></i>
-              <span class="filter-text">Mais filtros</span>
-            </div>
-            <select class="sort-select" id="ordenarProduto" onchange="filterProdutos()">
-              <option value="">Ordenar: Mais recentes</option>
-              <option value="preco-asc">Preço: Menor</option>
-              <option value="preco-desc">Preço: Maior</option>
-              <option value="estoque">Estoque</option>
-            </select>
           </div>
 
           <div class="table-container">
-            <table id="produtosTable">
+            <table id="produtosTabela">
               <thead>
                 <tr>
-                  <th><input type="checkbox" style="cursor: pointer;"></th>
                   <th>Produto</th>
                   <th>Categoria</th>
                   <th>Loja</th>
-                  <th>Preço</th>
-                  <th>Estoque</th>
-                  <th>Avaliação</th>
+                  <th>Preço Original</th>
+                  <th>Preço Venda</th>
                   <th>Status</th>
                   <th>Ações</th>
                 </tr>
               </thead>
-              <tbody id="produtosTableBody">
+              <tbody id="produtosCorpo">
+                <tr>
+                  <td colspan="7" style="text-align: center; padding: 40px;">Nenhum produto cadastrado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ CATEGORIAS ============ -->
+      <div id="categorias" class="content-section">
+        <h1 class="page-title">Categorias</h1>
+        <div class="section">
+          <div id="categoriasLista" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+            <!-- Preenchido por JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ LOJAS ============ -->
+      <div id="lojas" class="content-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <h1 class="page-title">Lojas</h1>
+        </div>
+        <div class="section">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loja</th>
+                  <th>Tipo</th>
+                  <th>Localização</th>
+                  <th>Avaliação</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="lojasCorpo">
                 <!-- Preenchido por JavaScript -->
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
 
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-            <p class="pagination-text" id="paginationInfo">Mostrando 1 a 3 de 156 produtos</p>
-            <div class="pagination">
-              <button class="pagination-item">Anterior</button>
-              <button class="pagination-item active">1</button>
-              <button class="pagination-item">2</button>
-              <button class="pagination-item">3</button>
-              <button class="pagination-item">...</button>
-              <button class="pagination-item">52</button>
-              <button class="pagination-item">Próxima</button>
-            </div>
+      <!-- ============ CUPONS ============ -->
+      <div id="cupons" class="content-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <div>
+            <h1 class="page-title">Cupons de Desconto</h1>
+          </div>
+          <button class="btn btn-primary" onclick="abrirModalCupom()">
+            <i class="fas fa-plus"></i>
+            Novo Cupom
+          </button>
+        </div>
+
+        <div class="section">
+          <div class="table-container">
+            <table id="cupomsTabela">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Loja</th>
+                  <th>Desconto</th>
+                  <th>Descrição</th>
+                  <th>Mínimo</th>
+                  <th>Expira em</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="cupomsCorpo">
+                <tr>
+                  <td colspan="8" style="text-align: center; padding: 40px;">Nenhum cupom cadastrado</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
-      <!-- ============ OUTRAS SEÇÕES ============ -->
-      <div id="categorias" class="content-section">
-        <h1 class="page-title">Categorias</h1>
-        <div class="section" style="padding: 40px; text-align: center; color: #999;">
-          <i class="fas fa-tags" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
-          <p>Gerenciar categorias de produtos</p>
-          <button class="btn btn-primary" style="margin-top: 16px;">Adicionar Categoria</button>
-        </div>
-      </div>
-
-      <div id="lojas" class="content-section">
-        <h1 class="page-title">Lojas</h1>
-        <div class="section" style="padding: 40px; text-align: center; color: #999;">
-          <i class="fas fa-store" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
-          <p>Gerenciar lojas integradas</p>
-          <button class="btn btn-primary" style="margin-top: 16px;">Adicionar Loja</button>
-        </div>
-      </div>
-
-      <div id="cupons" class="content-section">
-        <h1 class="page-title">Cupons</h1>
-        <div class="section" style="padding: 40px; text-align: center; color: #999;">
-          <i class="fas fa-ticket-alt" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
-          <p>Gerenciar cupons de desconto</p>
-          <button class="btn btn-primary" style="margin-top: 16px;">Criar Cupom</button>
-        </div>
-      </div>
-
-      <div id="pedidos" class="content-section">
-        <h1 class="page-title">Pedidos</h1>
-        <div class="section" style="padding: 40px; text-align: center; color: #999;">
-          <i class="fas fa-shopping-cart" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
-          <p>Visualizar e gerenciar pedidos</p>
-        </div>
-      </div>
-
-      <div id="clientes" class="content-section">
-        <h1 class="page-title">Clientes</h1>
-        <div class="section" style="padding: 40px; text-align: center; color: #999;">
-          <i class="fas fa-users" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
-          <p>Gerenciar base de clientes</p>
-        </div>
-      </div>
-
-      <div id="avaliacoes" class="content-section">
-        <h1 class="page-title">Avaliações</h1>
-        <div class="section" style="padding: 40px; text-align: center; color: #999;">
-          <i class="fas fa-star" style="font-size: 48px; margin-bottom: 16px; opacity: 0.5;"></i>
-          <p>Visualizar avaliações de clientes</p>
-        </div>
-      </div>
-
+      <!-- ============ CONFIGURAÇÕES ============ -->
       <div id="configuracoes" class="content-section">
         <h1 class="page-title">Configurações</h1>
-        <div class="section">
-          <form id="configForm" style="max-width: 500px;">
-            <div class="form-group">
-              <label class="form-label">Nome da Empresa</label>
-              <input type="text" class="form-input" placeholder="Pippit AI" value="Pippit AI">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-input" placeholder="admin@pippit.com" value="admin@pippit.com">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Telefone</label>
-              <input type="tel" class="form-input" placeholder="(11) 9999-9999" value="11999999999">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Endereço</label>
-              <input type="text" class="form-input" placeholder="São Paulo, SP" value="São Paulo, SP">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Tema</label>
-              <select class="form-select">
-                <option value="escuro">Escuro</option>
-                <option value="claro">Claro</option>
-              </select>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="saveConfig()">Salvar Configurações</button>
-          </form>
+        <div class="section" style="max-width: 600px;">
+          <h3 style="margin-bottom: 20px; font-weight: 600;">Informações da Loja</h3>
+          
+          <div class="form-group">
+            <label class="form-label">Nome da Empresa</label>
+            <input type="text" class="form-input" id="configNome" placeholder="Pippit Store">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email de Contato</label>
+            <input type="email" class="form-input" id="configEmail" placeholder="admin@pippit.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Telefone</label>
+            <input type="tel" class="form-input" id="configTelefone" placeholder="(11) 9999-9999">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Endereço</label>
+            <input type="text" class="form-input" id="configEndereco" placeholder="São Paulo, SP">
+          </div>
+
+          <button class="btn btn-primary" onclick="salvarConfiguracoes()">
+            <i class="fas fa-save"></i>
+            Salvar Configurações
+          </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MODAL - NOVO PRODUTO -->
-  <div class="modal" id="productModal">
+  <!-- MODAL PRODUTO -->
+  <div class="modal" id="produtoModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title">Novo Produto</h2>
-        <button class="modal-close" onclick="closeProductModal()">×</button>
+        <h2 class="modal-title" id="produtoModalTitulo">Novo Produto</h2>
+        <button class="modal-close" onclick="fecharModalProduto()">×</button>
       </div>
-      <form id="productForm" onsubmit="addProduct(event)">
+      <form id="produtoForm" onsubmit="salvarProduto(event)">
         <div class="form-group">
-          <label class="form-label">Nome do Produto *</label>
+          <label class="form-label required">Nome do Produto</label>
           <input type="text" class="form-input" id="produtoNome" required>
+          <div class="error-message" id="nomeError"></div>
         </div>
+
         <div class="form-group">
-          <label class="form-label">Categoria *</label>
+          <label class="form-label required">Categoria</label>
           <select class="form-select" id="produtoCategoria" required>
             <option value="">Selecione</option>
-            <option value="Utilidades">Utilidades</option>
-            <option value="Beleza">Beleza</option>
-            <option value="Perfumaria">Perfumaria</option>
           </select>
+          <div class="error-message" id="categoriaError"></div>
         </div>
+
         <div class="form-group">
-          <label class="form-label">Loja *</label>
+          <label class="form-label required">Loja</label>
           <select class="form-select" id="produtoLoja" required>
             <option value="">Selecione</option>
-            <option value="Shopee">Shopee</option>
-            <option value="Casa Construção">Casa Construção</option>
-            <option value="Beleza">Beleza</option>
+          </select>
+          <div class="error-message" id="lojaError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Preço Original (R$)</label>
+          <input type="number" class="form-input" id="produtoPrecoOriginal" step="0.01" required>
+          <div class="error-message" id="precoOriginalError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Preço de Venda (R$)</label>
+          <input type="number" class="form-input" id="produtoPrecoVenda" step="0.01" required>
+          <div class="error-message" id="precoVendaError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Link Afiliado</label>
+          <input type="url" class="form-input" id="produtoLink" placeholder="https://..." required>
+          <div class="error-message" id="linkError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">URL da Imagem Principal</label>
+          <input type="url" class="form-input" id="produtoImg" placeholder="https://..." required>
+          <div class="error-message" id="imgError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Status</label>
+          <select class="form-select" id="produtoStatus" required>
+            <option value="Ativo">Ativo</option>
+            <option value="Inativo">Inativo</option>
           </select>
         </div>
-        <div class="form-group">
-          <label class="form-label">Preço Original (R$) *</label>
-          <input type="number" class="form-input" id="produtoPreco" step="0.01" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Preço de Venda (R$) *</label>
-          <input type="number" class="form-input" id="produtoPrecoVenda" step="0.01" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Estoque *</label>
-          <input type="number" class="form-input" id="produtoEstoque" required>
-        </div>
+
         <div class="form-actions">
-          <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Adicionar Produto</button>
+          <button type="button" class="btn btn-secondary" onclick="fecharModalProduto()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar Produto</button>
         </div>
       </form>
     </div>
   </div>
 
-  <script>
-    const API_URL = 'http://localhost:3000/api';
+  <!-- MODAL CUPOM -->
+  <div class="modal" id="cupomModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Novo Cupom</h2>
+        <button class="modal-close" onclick="fecharModalCupom()">×</button>
+      </div>
+      <form id="cupomForm" onsubmit="salvarCupom(event)">
+        <div class="form-group">
+          <label class="form-label required">Código do Cupom</label>
+          <input type="text" class="form-input" id="cupomCodigo" placeholder="PROMO20" required>
+          <div class="error-message" id="codigoError"></div>
+        </div>
 
-    // ============ FUNÇÕES GERAIS ============
+        <div class="form-group">
+          <label class="form-label required">Loja</label>
+          <select class="form-select" id="cupomLoja" required>
+            <option value="">Selecione</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Descrição</label>
+          <input type="text" class="form-input" id="cupomDescricao" placeholder="Desconto especial" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Tipo de Desconto</label>
+          <select class="form-select" id="cupomTipo" required onchange="atualizarCamposDesconto()">
+            <option value="percentual">Percentual (%)</option>
+            <option value="fixo">Valor Fixo (R$)</option>
+            <option value="frete">Frete Grátis</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="grupoValorDesconto">
+          <label class="form-label required">Valor do Desconto</label>
+          <input type="number" class="form-input" id="cupomValor" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Valor Mínimo (R$)</label>
+          <input type="number" class="form-input" id="cupomMinimo" step="0.01" placeholder="0">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Data de Expiração</label>
+          <input type="date" class="form-input" id="cupomExpiracao" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="fecharModalCupom()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar Cupom</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL CADASTRO -->
+  <div class="modal" id="cadastroModal">
+    <div class="modal-content" style="max-width: 400px;">
+      <div class="modal-header">
+        <h2 class="modal-title">Criar Conta</h2>
+        <button class="modal-close" onclick="fecharModalCadastro()">×</button>
+      </div>
+      <form id="cadastroForm" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label class="form-label required">Nome</label>
+          <input type="text" class="form-input" id="cadastroNome" required>
+          <div class="error-message" id="nomeRegError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Email</label>
+          <input type="email" class="form-input" id="cadastroEmail" required>
+          <div class="error-message" id="emailRegError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Senha</label>
+          <input type="password" class="form-input" id="cadastroSenha" placeholder="Mínimo 6 caracteres" required>
+          <div class="error-message" id="senhaRegError"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label required">Confirmar Senha</label>
+          <input type="password" class="form-input" id="cadastroConfirma" required>
+          <div class="error-message" id="confirmaError"></div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" onclick="fecharModalCadastro()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Criar Conta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCydy0v27JxNvKBW3aqFa3Uel8Slkdtcx4",
+      authDomain: "central-promocoes.firebaseapp.com",
+      projectId: "central-promocoes",
+      storageBucket: "central-promocoes.firebasestorage.app",
+      messagingSenderId: "396856047778",
+      appId: "1:396856047778:web:8608a6b95f26f160d27ffb"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+
+    // ==================== VARIÁVEIS GLOBAIS ====================
+    let produtosGlobais = [];
+    let lojasGlobais = [];
+    let cupomsGlobais = [];
+    let categoriasGlobais = [];
+    let usuarioAtual = null;
+
+    const CATEGORIAS = [
+      "Roupas Masculinas", "Roupas Femininas", "Roupas Infantis", "Sapatos",
+      "Relógios", "Acessórios", "Bolsas", "Eletrônicos", "Eletrodomésticos",
+      "Fitness", "Automotivo", "Mãe & Bebê", "Beleza", "Pets", "Brinquedos",
+      "Papelaria", "Limpeza", "Casa & Construção", "Viagens", "Festividades"
+    ];
+
+    const LOJAS = [
+      { nome: "Shopee", tipo: "Marketplace", localizacao: "São Paulo, SP", avaliacao: "4.7" },
+      { nome: "Mercado Livre", tipo: "Marketplace", localizacao: "Osasco, SP", avaliacao: "4.8" },
+      { nome: "Amazon Brasil", tipo: "Marketplace", localizacao: "São Paulo, SP", avaliacao: "4.6" },
+      { nome: "Magazine Luiza", tipo: "Varejo", localizacao: "Franca, SP", avaliacao: "4.5" },
+      { nome: "Magalu", tipo: "Varejo", localizacao: "São Paulo, SP", avaliacao: "4.4" }
+    ];
+
+    // ==================== INICIALIZAÇÃO ====================
+    document.addEventListener("DOMContentLoaded", () => {
+      verificarAutenticacao();
+      carregarDados();
+    });
+
+    // ==================== AUTENTICAÇÃO ====================
+    function verificarAutenticacao() {
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          usuarioAtual = user;
+          document.getElementById("loginPage").style.display = "none";
+          document.getElementById("mainApp").style.display = "flex";
+          document.getElementById("adminName").innerText = user.email.split("@")[0];
+          carregarDados();
+        } else {
+          usuarioAtual = null;
+          document.getElementById("loginPage").style.display = "flex";
+          document.getElementById("mainApp").style.display = "none";
+        }
+      });
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      if (!email || !password) {
+        mostrarErro("Preencha todos os campos", "loginError");
+        return;
+      }
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          document.getElementById("loginForm").reset();
+          limparErros(["loginError", "emailError", "passwordError"]);
+        })
+        .catch(erro => {
+          let mensagem = "Erro ao fazer login";
+          if (erro.code === "auth/user-not-found") mensagem = "Usuário não encontrado";
+          if (erro.code === "auth/wrong-password") mensagem = "Senha incorreta";
+          mostrarErro(mensagem, "loginError");
+        });
+    }
+
+    function handleRegister(event) {
+      event.preventDefault();
+      const nome = document.getElementById("cadastroNome").value.trim();
+      const email = document.getElementById("cadastroEmail").value.trim();
+      const senha = document.getElementById("cadastroSenha").value;
+      const confirma = document.getElementById("cadastroConfirma").value;
+
+      limparErros(["nomeRegError", "emailRegError", "senhaRegError", "confirmaError"]);
+
+      if (!nome) {
+        mostrarErro("Nome é obrigatório", "nomeRegError");
+        return;
+      }
+
+      if (!email) {
+        mostrarErro("Email é obrigatório", "emailRegError");
+        return;
+      }
+
+      if (senha.length < 6) {
+        mostrarErro("Senha deve ter pelo menos 6 caracteres", "senhaRegError");
+        return;
+      }
+
+      if (senha !== confirma) {
+        mostrarErro("Senhas não coincidem", "confirmaError");
+        return;
+      }
+
+      auth.createUserWithEmailAndPassword(email, senha)
+        .then(userCredential => {
+          return db.collection("admins").doc(userCredential.user.uid).set({
+            nome: nome,
+            email: email,
+            criadoEm: new Date()
+          });
+        })
+        .then(() => {
+          alert("Conta criada com sucesso! Faça login para continuar.");
+          fecharModalCadastro();
+          document.getElementById("loginForm").reset();
+        })
+        .catch(erro => {
+          let mensagem = "Erro ao criar conta";
+          if (erro.code === "auth/email-already-in-use") mensagem = "Email já está em uso";
+          if (erro.code === "auth/invalid-email") mensagem = "Email inválido";
+          mostrarErro(mensagem, "cadastroForm");
+        });
+    }
+
+    function handleLogout() {
+      if (confirm("Deseja sair?")) {
+        auth.signOut().then(() => {
+          usuarioAtual = null;
+          document.getElementById("loginPage").style.display = "flex";
+          document.getElementById("mainApp").style.display = "none";
+        });
+      }
+    }
+
+    // ==================== CARREGAR DADOS ====================
+    function carregarDados() {
+      carregarProdutos();
+      carregarLojas();
+      carregarCupons();
+      carregarCategorias();
+      preencherSelects();
+      atualizarMetricas();
+    }
+
+    function carregarProdutos() {
+      db.collection("produtos").onSnapshot(snapshot => {
+        produtosGlobais = [];
+        snapshot.forEach(doc => {
+          produtosGlobais.push({ id: doc.id, ...doc.data() });
+        });
+        atualizarTabelaProdutos();
+        atualizarMetricas();
+      }, error => {
+        console.error("Erro ao carregar produtos:", error);
+      });
+    }
+
+    function carregarLojas() {
+      db.collection("lojas").onSnapshot(snapshot => {
+        lojasGlobais = [];
+        snapshot.forEach(doc => {
+          lojasGlobais.push({ id: doc.id, ...doc.data() });
+        });
+        atualizarTabelaLojas();
+        atualizarMetricas();
+      }, error => {
+        console.error("Erro ao carregar lojas:", error);
+        lojasGlobais = LOJAS;
+        atualizarTabelaLojas();
+      });
+    }
+
+    function carregarCupons() {
+      db.collection("cupons").onSnapshot(snapshot => {
+        cupomsGlobais = [];
+        snapshot.forEach(doc => {
+          cupomsGlobais.push({ id: doc.id, ...doc.data() });
+        });
+        atualizarTabelaCupons();
+        atualizarMetricas();
+      }, error => {
+        console.error("Erro ao carregar cupons:", error);
+      });
+    }
+
+    function carregarCategorias() {
+      categoriasGlobais = CATEGORIAS;
+      atualizarTabelaCategorias();
+    }
+
+    function preencherSelects() {
+      const selectCategoria = document.getElementById("produtoCategoria");
+      const selectCupomLoja = document.getElementById("cupomLoja");
+      const selectProdutoLoja = document.getElementById("produtoLoja");
+      const selectFilterCategoria = document.getElementById("categoriaProdutoFilter");
+      const selectFilterLoja = document.getElementById("lojaProdutoFilter");
+
+      // Preencher categorias
+      selectCategoria.innerHTML = '<option value="">Selecione</option>';
+      categoriasGlobais.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        selectCategoria.appendChild(option);
+
+        const option2 = document.createElement("option");
+        option2.value = cat;
+        option2.textContent = cat;
+        selectFilterCategoria.appendChild(option2);
+      });
+
+      // Preencher lojas
+      const lojas = lojasGlobais.length > 0 ? lojasGlobais : LOJAS;
+      selectProdutoLoja.innerHTML = '<option value="">Selecione</option>';
+      selectCupomLoja.innerHTML = '<option value="">Selecione</option>';
+      selectFilterLoja.innerHTML = '<option value="">Todas Lojas</option>';
+
+      lojas.forEach(loja => {
+        const nomeLoja = loja.nome || loja;
+
+        const opt1 = document.createElement("option");
+        opt1.value = nomeLoja;
+        opt1.textContent = nomeLoja;
+        selectProdutoLoja.appendChild(opt1);
+
+        const opt2 = document.createElement("option");
+        opt2.value = nomeLoja;
+        opt2.textContent = nomeLoja;
+        selectCupomLoja.appendChild(opt2);
+
+        const opt3 = document.createElement("option");
+        opt3.value = nomeLoja;
+        opt3.textContent = nomeLoja;
+        selectFilterLoja.appendChild(opt3);
+      });
+    }
+
+    // ==================== ATUALIZAR TABELAS ====================
+    function atualizarTabelaProdutos() {
+      const tbody = document.getElementById("produtosCorpo");
+
+      if (produtosGlobais.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 40px;">Nenhum produto cadastrado</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = produtosGlobais.map(prod => `
+        <tr>
+          <td>
+            <div class="product-cell">
+              <img src="${prod.img}" class="product-image">
+              <div class="product-info">
+                <h4>${prod.nome}</h4>
+                <p>ID: ${prod.id.substring(0, 8)}</p>
+              </div>
+            </div>
+          </td>
+          <td><span class="badge badge-primary">${prod.categoria}</span></td>
+          <td>${prod.loja}</td>
+          <td>R$ ${parseFloat(prod.precoOriginal).toFixed(2).replace(".", ",")}</td>
+          <td>R$ ${parseFloat(prod.precoVenda).toFixed(2).replace(".", ",")}</td>
+          <td><span class="status-badge ${prod.status === 'Ativo' ? 'active' : 'inactive'}"><span class="status-dot"></span>${prod.status}</span></td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-icon" onclick="editarProduto('${prod.id}')" title="Editar">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn-icon" onclick="deletarProduto('${prod.id}')" title="Deletar">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function atualizarTabelaLojas() {
+      const tbody = document.getElementById("lojasCorpo");
+      const lojas = lojasGlobais.length > 0 ? lojasGlobais : LOJAS;
+
+      tbody.innerHTML = lojas.map(loja => `
+        <tr>
+          <td><strong>${loja.nome}</strong></td>
+          <td>${loja.tipo || "Marketplace"}</td>
+          <td>${loja.localizacao || "São Paulo, SP"}</td>
+          <td>⭐ ${loja.avaliacao || "4.5"}</td>
+          <td><span class="status-badge active"><span class="status-dot"></span>Ativa</span></td>
+        </tr>
+      `).join("");
+    }
+
+    function atualizarTabelaCupons() {
+      const tbody = document.getElementById("cupomsCorpo");
+
+      if (cupomsGlobais.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px;">Nenhum cupom cadastrado</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = cupomsGlobais.map(cupom => {
+        const hoje = new Date().toISOString().split("T")[0];
+        const expirado = cupom.expiracao < hoje;
+
+        return `
+          <tr>
+            <td><strong>${cupom.codigo}</strong></td>
+            <td>${cupom.loja}</td>
+            <td>${cupom.tipo === 'percentual' ? cupom.valor + '%' : cupom.tipo === 'fixo' ? 'R$ ' + cupom.valor : 'Frete'}</td>
+            <td>${cupom.descricao}</td>
+            <td>R$ ${parseFloat(cupom.minimo || 0).toFixed(2).replace(".", ",")}</td>
+            <td>${cupom.expiracao}</td>
+            <td><span class="status-badge ${expirado ? 'inactive' : 'active'}"><span class="status-dot"></span>${expirado ? 'Expirado' : 'Ativo'}</span></td>
+            <td>
+              <button class="btn-icon" onclick="deletarCupom('${cupom.id}')" title="Deletar">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function atualizarTabelaCategorias() {
+      const container = document.getElementById("categoriasLista");
+      container.innerHTML = categoriasGlobais.map(cat => `
+        <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #e0e0e0;">
+          <i class="fas fa-tag" style="font-size: 32px; color: #8b5cf6; margin-bottom: 10px; display: block;"></i>
+          <h4>${cat}</h4>
+          <p style="color: #999; font-size: 12px; margin-top: 8px;">${produtosGlobais.filter(p => p.categoria === cat).length} produtos</p>
+        </div>
+      `).join("");
+    }
+
+    // ==================== ATUALIZAR MÉTRICAS ====================
+    function atualizarMetricas() {
+      document.getElementById("totalProdutos").innerText = produtosGlobais.length;
+      document.getElementById("totalLojas").innerText = (lojasGlobais.length || LOJAS.length);
+      document.getElementById("totalCupons").innerText = cupomsGlobais.length;
+      document.getElementById("totalCategorias").innerText = categoriasGlobais.length;
+
+      document.getElementById("produtosPercent").innerText = Math.floor(Math.random() * 20 + 5) + "%";
+      document.getElementById("lojasPercent").innerText = Math.floor(Math.random() * 20 + 2) + "%";
+      document.getElementById("cuponsPercent").innerText = Math.floor(Math.random() * 30 + 5) + "%";
+      document.getElementById("categoriasPercent").innerText = Math.floor(Math.random() * 10 + 1) + "%";
+    }
+
+    // ==================== PRODUTOS - CRUD ====================
+    function abrirModalProduto() {
+      document.getElementById("produtoModalTitulo").innerText = "Novo Produto";
+      document.getElementById("produtoForm").reset();
+      limparErros(["nomeError", "categoriaError", "lojaError", "precoOriginalError", "precoVendaError", "linkError", "imgError"]);
+      document.getElementById("produtoModal").classList.add("show");
+    }
+
+    function fecharModalProduto() {
+      document.getElementById("produtoModal").classList.remove("show");
+    }
+
+    function salvarProduto(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("produtoNome").value.trim();
+      const categoria = document.getElementById("produtoCategoria").value;
+      const loja = document.getElementById("produtoLoja").value;
+      const precoOriginal = document.getElementById("produtoPrecoOriginal").value;
+      const precoVenda = document.getElementById("produtoPrecoVenda").value;
+      const link = document.getElementById("produtoLink").value.trim();
+      const img = document.getElementById("produtoImg").value.trim();
+      const status = document.getElementById("produtoStatus").value;
+
+      limparErros(["nomeError", "categoriaError", "lojaError", "precoOriginalError", "precoVendaError", "linkError", "imgError"]);
+
+      let temErro = false;
+
+      if (!nome) {
+        mostrarErro("Nome é obrigatório", "nomeError");
+        temErro = true;
+      }
+
+      if (!categoria) {
+        mostrarErro("Categoria é obrigatória", "categoriaError");
+        temErro = true;
+      }
+
+      if (!loja) {
+        mostrarErro("Loja é obrigatória", "lojaError");
+        temErro = true;
+      }
+
+      if (!precoOriginal || parseFloat(precoOriginal) <= 0) {
+        mostrarErro("Preço original deve ser maior que 0", "precoOriginalError");
+        temErro = true;
+      }
+
+      if (!precoVenda || parseFloat(precoVenda) <= 0) {
+        mostrarErro("Preço de venda deve ser maior que 0", "precoVendaError");
+        temErro = true;
+      }
+
+      if (!link || !link.startsWith("http")) {
+        mostrarErro("Link deve ser uma URL válida", "linkError");
+        temErro = true;
+      }
+
+      if (!img || !img.startsWith("http")) {
+        mostrarErro("URL da imagem deve ser válida", "imgError");
+        temErro = true;
+      }
+
+      if (temErro) return;
+
+      const dados = {
+        nome,
+        categoria,
+        loja,
+        precoOriginal: parseFloat(precoOriginal),
+        precoVenda: parseFloat(precoVenda),
+        link,
+        img,
+        status,
+        createdAt: new Date()
+      };
+
+      db.collection("produtos").add(dados)
+        .then(() => {
+          alert("Produto salvo com sucesso!");
+          fecharModalProduto();
+        })
+        .catch(erro => alert("Erro ao salvar produto: " + erro.message));
+    }
+
+    function editarProduto(id) {
+      const prod = produtosGlobais.find(p => p.id === id);
+      if (!prod) return;
+
+      document.getElementById("produtoModalTitulo").innerText = "Editar Produto";
+      document.getElementById("produtoNome").value = prod.nome;
+      document.getElementById("produtoCategoria").value = prod.categoria;
+      document.getElementById("produtoLoja").value = prod.loja;
+      document.getElementById("produtoPrecoOriginal").value = prod.precoOriginal;
+      document.getElementById("produtoPrecoVenda").value = prod.precoVenda;
+      document.getElementById("produtoLink").value = prod.link;
+      document.getElementById("produtoImg").value = prod.img;
+      document.getElementById("produtoStatus").value = prod.status;
+
+      document.getElementById("produtoForm").onsubmit = (e) => {
+        e.preventDefault();
+        atualizarProduto(id);
+      };
+
+      document.getElementById("produtoModal").classList.add("show");
+    }
+
+    function atualizarProduto(id) {
+      const nome = document.getElementById("produtoNome").value.trim();
+      const categoria = document.getElementById("produtoCategoria").value;
+      const loja = document.getElementById("produtoLoja").value;
+      const precoOriginal = document.getElementById("produtoPrecoOriginal").value;
+      const precoVenda = document.getElementById("produtoPrecoVenda").value;
+      const link = document.getElementById("produtoLink").value.trim();
+      const img = document.getElementById("produtoImg").value.trim();
+      const status = document.getElementById("produtoStatus").value;
+
+      db.collection("produtos").doc(id).update({
+        nome,
+        categoria,
+        loja,
+        precoOriginal: parseFloat(precoOriginal),
+        precoVenda: parseFloat(precoVenda),
+        link,
+        img,
+        status
+      })
+        .then(() => {
+          alert("Produto atualizado com sucesso!");
+          fecharModalProduto();
+          document.getElementById("produtoForm").onsubmit = (e) => salvarProduto(e);
+        })
+        .catch(erro => alert("Erro ao atualizar: " + erro.message));
+    }
+
+    function deletarProduto(id) {
+      if (confirm("Tem certeza que deseja deletar este produto?")) {
+        db.collection("produtos").doc(id).delete()
+          .then(() => alert("Produto deletado com sucesso!"))
+          .catch(erro => alert("Erro ao deletar: " + erro.message));
+      }
+    }
+
+    // ==================== CUPONS - CRUD ====================
+    function abrirModalCupom() {
+      document.getElementById("cupomForm").reset();
+      document.getElementById("cupomModal").classList.add("show");
+      atualizarCamposDesconto();
+    }
+
+    function fecharModalCupom() {
+      document.getElementById("cupomModal").classList.remove("show");
+    }
+
+    function atualizarCamposDesconto() {
+      const tipo = document.getElementById("cupomTipo").value;
+      const grupoValor = document.getElementById("grupoValorDesconto");
+      const input = document.getElementById("cupomValor");
+
+      if (tipo === "frete") {
+        grupoValor.style.display = "none";
+        input.value = "0";
+      } else {
+        grupoValor.style.display = "block";
+        input.placeholder = tipo === "percentual" ? "Ex: 20" : "Ex: 15.00";
+      }
+    }
+
+    function salvarCupom(event) {
+      event.preventDefault();
+
+      const codigo = document.getElementById("cupomCodigo").value.trim().toUpperCase();
+      const loja = document.getElementById("cupomLoja").value;
+      const descricao = document.getElementById("cupomDescricao").value.trim();
+      const tipo = document.getElementById("cupomTipo").value;
+      const valor = document.getElementById("cupomValor").value;
+      const minimo = document.getElementById("cupomMinimo").value || "0";
+      const expiracao = document.getElementById("cupomExpiracao").value;
+
+      limparErros(["codigoError"]);
+
+      if (!codigo) {
+        mostrarErro("Código é obrigatório", "codigoError");
+        return;
+      }
+
+      if (cupomsGlobais.some(c => c.codigo === codigo)) {
+        mostrarErro("Código já existe", "codigoError");
+        return;
+      }
+
+      const dados = {
+        codigo,
+        loja,
+        descricao,
+        tipo,
+        valor: tipo === "frete" ? 0 : parseFloat(valor),
+        minimo: parseFloat(minimo),
+        expiracao,
+        criadoEm: new Date()
+      };
+
+      db.collection("cupons").add(dados)
+        .then(() => {
+          alert("Cupom salvo com sucesso!");
+          fecharModalCupom();
+        })
+        .catch(erro => alert("Erro ao salvar cupom: " + erro.message));
+    }
+
+    function deletarCupom(id) {
+      if (confirm("Tem certeza que deseja deletar este cupom?")) {
+        db.collection("cupons").doc(id).delete()
+          .then(() => alert("Cupom deletado com sucesso!"))
+          .catch(erro => alert("Erro ao deletar: " + erro.message));
+      }
+    }
+
+    // ==================== NAVEGAÇÃO ====================
     function showPage(page) {
       document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
       document.getElementById(page).classList.add('active');
@@ -1322,261 +1896,67 @@
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
       event.target.closest('.nav-item').classList.add('active');
 
-      if (page === 'dashboard') {
-        loadDashboard();
-      } else if (page === 'produtos') {
-        loadProdutos();
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('collapsed');
+      document.getElementById("sidebar").classList.toggle("collapsed");
     }
 
-    // ============ DASHBOARD ============
-    async function loadDashboard() {
-      try {
-        const response = await fetch(`${API_URL}/dashboard`);
-        const data = await response.json();
+    // ==================== FILTROS ====================
+    function filterTabela() {
+      const searchTerm = document.getElementById("globalSearch").value.toLowerCase();
+      const rows = document.querySelectorAll("#produtosCorpo tr");
 
-        const metricsGrid = document.getElementById('metricsGrid');
-        metricsGrid.innerHTML = `
-          <div class="metric-card">
-            <div class="metric-header">
-              <div>
-                <div class="metric-title">Pedidos</div>
-                <div class="metric-value">${data.pedidos.valor.toLocaleString('pt-BR')}</div>
-                <div class="metric-change">
-                  <i class="fas fa-arrow-up"></i>
-                  ${data.pedidos.percentual}%
-                  <span class="metric-comparison">vs. mês anterior</span>
-                </div>
-              </div>
-              <div class="metric-icon purple">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-            </div>
-            <div class="metric-chart"></div>
-            <button class="close-btn">×</button>
-          </div>
+      rows.forEach(row => {
+        const texto = row.textContent.toLowerCase();
+        row.style.display = texto.includes(searchTerm) ? "" : "none";
+      });
+    }
 
-          <div class="metric-card">
-            <div class="metric-header">
-              <div>
-                <div class="metric-title">Receita</div>
-                <div class="metric-value">R$ ${data.receita.valor.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
-                <div class="metric-change">
-                  <i class="fas fa-arrow-up"></i>
-                  ${data.receita.percentual}%
-                  <span class="metric-comparison">vs. mês anterior</span>
-                </div>
-              </div>
-              <div class="metric-icon green">
-                <i class="fas fa-dollar-sign"></i>
-              </div>
-            </div>
-            <div class="metric-chart"></div>
-            <button class="close-btn">×</button>
-          </div>
+    // ==================== CONFIGURAÇÕES ====================
+    function salvarConfiguracoes() {
+      const nome = document.getElementById("configNome").value;
+      const email = document.getElementById("configEmail").value;
+      const telefone = document.getElementById("configTelefone").value;
+      const endereco = document.getElementById("configEndereco").value;
 
-          <div class="metric-card">
-            <div class="metric-header">
-              <div>
-                <div class="metric-title">Produtos</div>
-                <div class="metric-value">${data.produtos.valor}</div>
-                <div class="metric-change negative">
-                  ${data.produtos.percentual}%
-                  <span class="metric-comparison">vs. mês anterior</span>
-                </div>
-              </div>
-              <div class="metric-icon blue">
-                <i class="fas fa-box"></i>
-              </div>
-            </div>
-            <div class="metric-chart"></div>
-            <button class="close-btn">×</button>
-          </div>
+      localStorage.setItem("configLoja", JSON.stringify({ nome, email, telefone, endereco }));
+      alert("Configurações salvas com sucesso!");
+    }
 
-          <div class="metric-card">
-            <div class="metric-header">
-              <div>
-                <div class="metric-title">Clientes</div>
-                <div class="metric-value">${data.clientes.valor}</div>
-                <div class="metric-change">
-                  <i class="fas fa-arrow-up"></i>
-                  ${data.clientes.percentual}%
-                  <span class="metric-comparison">vs. mês anterior</span>
-                </div>
-              </div>
-              <div class="metric-icon orange">
-                <i class="fas fa-users"></i>
-              </div>
-            </div>
-            <div class="metric-chart"></div>
-            <button class="close-btn">×</button>
-          </div>
-        `;
-
-        const alertsContainer = document.getElementById('alertsContainer');
-        alertsContainer.innerHTML = `
-          <div class="alert alert-success">
-            <div class="alert-icon"><i class="fas fa-check-circle"></i></div>
-            <div class="alert-content">
-              <div class="alert-title">Sucesso!</div>
-              <div class="alert-message">Produto atualizado com sucesso.</div>
-            </div>
-            <button class="alert-close" onclick="this.parentElement.style.display='none'">×</button>
-          </div>
-
-          <div class="alert alert-warning">
-            <div class="alert-icon"><i class="fas fa-exclamation-triangle"></i></div>
-            <div class="alert-content">
-              <div class="alert-title">Estoque baixo!</div>
-              <div class="alert-message">5 produtos com estoque abaixo de 10 unidades. <a class="alert-link" href="#" onclick="showPage('produtos')">Ver</a></div>
-            </div>
-            <button class="alert-close" onclick="this.parentElement.style.display='none'">×</button>
-          </div>
-
-          <div class="alert alert-error">
-            <div class="alert-icon"><i class="fas fa-times-circle"></i></div>
-            <div class="alert-content">
-              <div class="alert-title">Erro ao salvar</div>
-              <div class="alert-message">Ocorreu um erro ao salvar o produto. <a class="alert-link" onclick="this.closest('.alert').style.display='none';">Tentar novamente</a></div>
-            </div>
-            <button class="alert-close" onclick="this.parentElement.style.display='none'">×</button>
-          </div>
-        `;
-      } catch (error) {
-        console.error('Erro ao carregar dashboard:', error);
+    // ==================== UTILITÁRIOS ====================
+    function mostrarErro(mensagem, elementId) {
+      const elemento = document.getElementById(elementId);
+      if (elemento) {
+        elemento.textContent = mensagem;
+        elemento.style.display = "block";
       }
     }
 
-    // ============ PRODUTOS ============
-    async function loadProdutos() {
-      try {
-        const response = await fetch(`${API_URL}/produtos`);
-        const data = await response.json();
-
-        const tableBody = document.getElementById('produtosTableBody');
-        tableBody.innerHTML = data.produtos.map(p => `
-          <tr>
-            <td><input type="checkbox" style="cursor: pointer;"></td>
-            <td>
-              <div class="product-cell">
-                <div class="product-image">📦</div>
-                <div class="product-info">
-                  <h4>${p.nome}</h4>
-                  <p>ID: #${p.id}</p>
-                </div>
-              </div>
-            </td>
-            <td><span class="badge badge-primary">${p.categoria}</span></td>
-            <td>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-${p.loja === 'Shopee' ? 'shopping-bag' : 'store'}" style="color: #f97316;"></i>
-                ${p.loja}
-              </div>
-            </td>
-            <td>
-              <span class="price-original">R$ ${p.preco.toFixed(2).replace('.', ',')}</span>
-              <strong>R$ ${p.precoVenda.toFixed(2).replace('.', ',')}</strong>
-            </td>
-            <td>
-              <div class="stock-status ${p.estoque > 20 ? 'normal' : 'low'}">
-                <i class="fas fa-${p.estoque > 20 ? 'check' : 'exclamation'}"></i>
-                ${p.estoque}
-                ${p.estoque <= 20 ? '<span style="margin-left: 4px;">Em estoque</span>' : ''}
-              </div>
-            </td>
-            <td>
-              <div class="rating">
-                ${Array(Math.floor(p.rating)).fill('★').join('')}${p.rating % 1 !== 0 ? '½' : ''}
-                <span class="rating-number">(${p.avaliacoes})</span>
-              </div>
-            </td>
-            <td>
-              <span class="status-badge active">
-                <span class="status-dot"></span>
-                ${p.status}
-              </span>
-            </td>
-            <td>
-              <div class="action-buttons">
-                <button class="btn-icon" title="Editar"><i class="fas fa-edit"></i></button>
-                <button class="btn-icon" title="Deletar"><i class="fas fa-trash"></i></button>
-                <button class="btn-icon" title="Mais opções"><i class="fas fa-ellipsis-v"></i></button>
-              </div>
-            </td>
-          </tr>
-        `).join('');
-
-        document.getElementById('paginationInfo').textContent = 
-          `Mostrando 1 a ${Math.min(10, data.total)} de ${data.total} produtos`;
-      } catch (error) {
-        console.error('Erro ao carregar produtos:', error);
-      }
-    }
-
-    function filterProdutos() {
-      const busca = document.getElementById('searchProduto').value;
-      const categoria = document.getElementById('categoriaProduto').value;
-      const loja = document.getElementById('lojaProduto').value;
-      const status = document.getElementById('statusProduto').value;
-
-      loadProdutos(); // Aqui você faria uma nova requisição com os filtros
-    }
-
-    // ============ MODAL PRODUTO ============
-    function openProductModal() {
-      document.getElementById('productModal').classList.add('show');
-    }
-
-    function closeProductModal() {
-      document.getElementById('productModal').classList.remove('show');
-      document.getElementById('productForm').reset();
-    }
-
-    async function addProduct(event) {
-      event.preventDefault();
-
-      const novoProduto = {
-        nome: document.getElementById('produtoNome').value,
-        categoria: document.getElementById('produtoCategoria').value,
-        loja: document.getElementById('produtoLoja').value,
-        preco: parseFloat(document.getElementById('produtoPreco').value),
-        precoVenda: parseFloat(document.getElementById('produtoPrecoVenda').value),
-        estoque: parseInt(document.getElementById('produtoEstoque').value),
-        status: 'Ativo'
-      };
-
-      try {
-        const response = await fetch(`${API_URL}/produtos`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(novoProduto)
-        });
-
-        if (response.ok) {
-          alert('Produto adicionado com sucesso!');
-          closeProductModal();
-          loadProdutos();
+    function limparErros(ids) {
+      ids.forEach(id => {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+          elemento.textContent = "";
+          elemento.style.display = "none";
         }
-      } catch (error) {
-        console.error('Erro ao adicionar produto:', error);
-        alert('Erro ao adicionar produto');
+      });
+    }
+
+    function mostrarModalCadastro() {
+      document.getElementById("cadastroModal").classList.add("show");
+    }
+
+    function fecharModalCadastro() {
+      document.getElementById("cadastroModal").classList.remove("show");
+    }
+
+    // Fechar modais ao clicar fora
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal")) {
+        e.target.classList.remove("show");
       }
-    }
-
-    // ============ CONFIGURAÇÕES ============
-    function saveConfig() {
-      alert('Configurações salvas com sucesso!');
-    }
-
-    // ============ INICIALIZAÇÃO ============
-    document.addEventListener('DOMContentLoaded', () => {
-      loadDashboard();
-      loadProdutos();
     });
   </script>
 </body>
