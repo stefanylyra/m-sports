@@ -1434,7 +1434,9 @@
       });
     }
 
-   function handleLogin() {
+  function handleLogin(event) {
+  if (event) event.preventDefault(); // Impede o recarregamento da página
+
   const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
   const errorDiv = document.getElementById('loginError');
@@ -1445,10 +1447,11 @@
     return;
   }
 
-  // CORREÇÃO AQUI: use as variáveis email e password
   auth.signInWithEmailAndPassword(email, password)
     .then(() => {
       errorDiv.style.display = 'none';
+      // Se não houver redirecionamento automático, esconda o container manualmente:
+      document.getElementById('loginContainer').classList.remove('show');
     })
     .catch(err => {
       errorDiv.innerText = '❌ ' + (err.message === 'Firebase: Error (auth/user-not-found).' ? 'Usuário não encontrado' : 'Email ou senha incorretos');
