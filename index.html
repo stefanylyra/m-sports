@@ -13,8 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="" rel="stylesheet">
   <style>
     :root {
       --black: #111111;
@@ -1150,6 +1149,101 @@
         height: 53px;
       }
     }
+    
+/* TRABALHE CONOSCO */
+
+.careers {
+  background: #191919;
+  border-top: 1px solid rgba(197, 160, 89, .18);
+  border-bottom: 1px solid rgba(197, 160, 89, .18);
+}
+
+.careers-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.careers-copy h2 {
+  margin: 24px 0;
+}
+
+.careers-copy > p {
+  color: #a5a29b;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.careers-note {
+  display: block;
+  margin-top: 15px;
+  color: #a5a29b;
+  font-size: 11px;
+}
+
+.careers-card {
+  padding: 35px;
+  border: 1px solid rgba(197, 160, 89, .3);
+  background: #111;
+}
+
+.careers-card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  border: 1px solid #c5a059;
+  color: #e0c58d;
+  font-size: 24px;
+}
+
+.careers-card h3 {
+  margin-top: 17px;
+  font-size: 29px;
+}
+
+.careers-card > p {
+  margin-top: 15px;
+  color: #a5a29b;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.careers-card .check-list {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .careers-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .careers-card {
+    padding: 25px 20px;
+  }
+
+  .careers-copy .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.footer-bottom {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .footer-bottom {
+    align-items: flex-start;
+    overflow-wrap: anywhere;
+  }
+}
+
   </style>
 </head>
 
@@ -1178,13 +1272,15 @@
         ☰
       </button>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#sobre">A Opus</a></li>
-        <li><a href="#servicos">Soluções</a></li>
-        <li><a href="#diferenciais">Diferenciais</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  
+<ul class="nav-links" id="nav-links">
+  <li><a href="#inicio">Início</a></li>
+  <li><a href="#sobre">A Opus</a></li>
+  <li><a href="#servicos">Soluções</a></li>
+  <li><a href="#diferenciais">Diferenciais</a></li>
+  <li><a href="#trabalhe-conosco">Trabalhe Conosco</a></li>
+  <li><a href="#contato">Contato</a></li>
+</ul>
 
       <a class="btn" href="#contato">Solicitar proposta ↗</a>
 
@@ -1651,6 +1747,65 @@
       </div>
     </section>
 
+    
+<!-- TRABALHE CONOSCO -->
+<section class="section careers" id="trabalhe-conosco">
+  <div class="container careers-grid">
+
+    <div class="careers-copy reveal">
+      <span class="eyebrow">Faça parte da Opus</span>
+
+      <h2>
+        Seu talento pode fazer parte de
+        <span class="gold">grandes experiências.</span>
+      </h2>
+
+      <p>
+        Estamos sempre em busca de pessoas comprometidas, comunicativas
+        e que valorizam a excelência no atendimento. Se você deseja
+        trabalhar com eventos, ações promocionais, recepção ou ativação
+        de marcas, queremos conhecer você.
+      </p>
+
+      <a
+        class="btn"
+        href="#"
+        id="careers-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tenho interesse em fazer parte da equipe ↗
+      </a>
+
+      <span class="careers-note">
+        Atendimento de oportunidades pelo WhatsApp.
+      </span>
+    </div>
+
+    <div class="careers-card reveal">
+      <div class="careers-card-icon">✦</div>
+
+      <span class="eyebrow">Oportunidades</span>
+
+      <h3>Vamos construir experiências juntos?</h3>
+
+      <p>
+        Se você tem boa comunicação, responsabilidade e vontade de
+        crescer no universo dos eventos, entre em contato conosco.
+      </p>
+
+      <ul class="check-list">
+        <li><span>✓</span> Promotores de eventos</li>
+        <li><span>✓</span> Recepcionistas</li>
+        <li><span>✓</span> Promotores de degustação</li>
+        <li><span>✓</span> Profissionais para ações promocionais</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
     <!-- CONTATO -->
     <section class="section" id="contato">
       <div class="container contact-grid">
@@ -1814,10 +1969,23 @@
 
       </div>
 
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Opus Eventos. Todos os direitos reservados.</span>
-        <span>Excelência em cada experiência.</span>
-      </div>
+   
+<div class="footer-bottom">
+  <span>
+    © <span id="year"></span> Opus Eventos. Todos os direitos reservados.
+  </span>
+
+  <span>
+    Atendimento em Curitiba e região metropolitana.
+  </span>
+
+  <span>
+    CNPJ: <strong style="color:#c5a059; font-weight:500;">
+      [INSIRA SEU CNPJ AQUI]
+    </strong>
+  </span>
+</div>
+
 
     </div>
   </footer>
@@ -1982,6 +2150,17 @@
     } else {
       revealElements.forEach(element => element.classList.add("visible"));
     }
+    
+const careersButton = document.getElementById("careers-whatsapp");
+
+careersButton.href =
+  "https://wa.me/" +
+  WHATSAPP_NUMBER.replace(/\D/g, "") +
+  "?text=" +
+  encodeURIComponent(
+    "Olá! Conheci o site da Opus Eventos e tenho interesse em fazer parte da equipe. Gostaria de saber mais sobre as oportunidades de trabalho, os requisitos e como posso cadastrar meu perfil. Obrigado(a)!"
+  );
+
   </script>
 
 </body>
